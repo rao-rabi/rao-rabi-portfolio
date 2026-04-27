@@ -10,12 +10,31 @@ const links = [
 export const Nav = () => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [active, setActive] = useState<string>("");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    const ids = links.map((l) => l.href.slice(1));
+    const sections = ids
+      .map((id) => document.getElementById(id))
+      .filter((el): el is HTMLElement => !!el);
+
+    const obs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActive(`#${entry.target.id}`);
+        });
+      },
+      { rootMargin: "-40% 0px -55% 0px", threshold: 0 }
+    );
+    sections.forEach((s) => obs.observe(s));
+    return () => obs.disconnect();
   }, []);
 
   return (
@@ -26,15 +45,21 @@ export const Nav = () => {
           : "bg-transparent"
       }`}
     >
-      <nav className="container-edge flex items-center justify-between h-16">
-        <a href="#top" className="font-display text-lg tracking-tight">
+      <nav className="container-edge flex items-center justify-between h-16" aria-label="Primary">
+        <a href="#top" className="font-display text-lg tracking-tight" aria-label="Home">
           Rabi<span className="gold">.</span>
         </a>
 
         <ul className="hidden md:flex items-center gap-8 text-sm ink-dim">
           {links.map((l) => (
             <li key={l.href}>
-              <a href={l.href} className="link-underline hover:text-ink transition-colors">
+              <a
+                href={l.href}
+                aria-current={active === l.href ? "true" : undefined}
+                className={`link-underline transition-colors ${
+                  active === l.href ? "text-ink" : "hover:text-ink"
+                }`}
+              >
                 {l.label}
               </a>
             </li>
@@ -52,7 +77,8 @@ export const Nav = () => {
         <button
           onClick={() => setOpen(!open)}
           className="md:hidden p-2 -mr-2"
-          aria-label="Menu"
+          aria-label="Toggle menu"
+          aria-expanded={open}
         >
           <div className="space-y-1.5">
             <span className={`block h-px w-6 bg-ink transition-transform ${open ? "translate-y-2 rotate-45" : ""}`} />
@@ -76,6 +102,16 @@ export const Nav = () => {
                 </a>
               </li>
             ))}
+            <li className="pt-2 border-t border-border">
+              <a
+                href="mailto:rabirao1039@gmail.com"
+                onClick={() => setOpen(false)}
+                className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider gold"
+              >
+                <span className="size-1.5 rounded-full bg-gold animate-pulse" />
+                Available for work
+              </a>
+            </li>
           </ul>
         </div>
       )}
