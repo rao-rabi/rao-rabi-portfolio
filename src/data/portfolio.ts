@@ -17,18 +17,53 @@ export const services = [
   {
     title: "Business Websites",
     desc: "Fast, modern websites for salons, restaurants, clinics and local brands — built to convert visitors into customers.",
+    startingAt: "$500",
   },
   {
     title: "Mobile Apps",
     desc: "Native-feel iOS & Android apps with React Native — booking apps, marketplaces, loyalty tools and more.",
+    startingAt: "$1,500",
   },
   {
     title: "Booking & Payments",
     desc: "Online booking systems, Stripe checkout, subscriptions and automated invoicing wired straight into your site.",
+    startingAt: "$800",
   },
   {
     title: "Custom Web Apps & SaaS",
     desc: "Dashboards, admin panels and full-blown SaaS products — scalable from your first user to your ten thousandth.",
+    startingAt: "$2,500",
+  },
+];
+
+export const testimonials = [
+  {
+    quote:
+      "I had the pleasure of working with Rao Rabi on a recent project, where he impressed me greatly with his development skills. He consistently demonstrated exceptional coding ability, a knack for solving problems, and a strong work ethic. His meticulous attention to detail and collaborative spirit were invaluable assets, and he consistently delivered top-notch work even under tight deadlines.",
+    name: "Haris Shafiq",
+    role: "Co-Founder @Findry",
+    via: "LinkedIn recommendation",
+  },
+  {
+    quote:
+      "As a Quality Assurance Engineer, I work with Rao Rabi. Developers often spend more time than necessary to complete a task. However, I was surprised by this person's extremely quick logical thinking. We were able to fix 23 software issues in under two hours after I found them one day. He is a skilled person who does not waste time getting to the point. 9.9 out of 10 points.",
+    name: "Usama Haider",
+    role: "Software Engineer",
+    via: "LinkedIn recommendation",
+  },
+  {
+    quote:
+      "During Rabi's time as a front-end developer, he showcased outstanding skills in HTML, CSS, JavaScript, and React.js. His meticulous attention to detail and commitment to creating seamless user experiences greatly contributed to our project's success. I highly recommend Rao Rabi for his exceptional front-end development skills.",
+    name: "Muhammad Arbaz",
+    role: "Sales & Growth Strategist | Business Developer",
+    via: "LinkedIn recommendation",
+  },
+  {
+    quote:
+      "I have had the pleasure of working closely with Rabi as part of our frontend development team. Rabi's technical prowess coupled with his amiable nature makes him a valuable asset. He consistently delivers high-quality work and brings a positive energy to our projects.",
+    name: "Muhammad Qasim",
+    role: "Senior Frontend Engineer | React & Next.js | Shopify Specialist",
+    via: "LinkedIn recommendation",
   },
 ];
 

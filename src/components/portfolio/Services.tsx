@@ -36,9 +36,18 @@ export const Services = () => {
             <p className="ink-dim mt-4 leading-relaxed text-pretty">
               {s.desc}
             </p>
+            {s.startingAt && (
+              <p className="mt-5 font-mono text-[11px] uppercase tracking-[0.2em] ink-faint">
+                Starting from <span className="gold">{s.startingAt}</span>
+              </p>
+            )}
           </article>
         ))}
       </div>
+
+      <p className="mt-8 text-sm ink-faint text-center md:text-left">
+        Final pricing depends on scope and timeline — get a free quote in 24 hours.
+      </p>
     </section>
   );
 };

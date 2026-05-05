@@ -52,7 +52,7 @@ export const Contact = () => {
     <section id="contact" className="py-24 md:py-40 container-edge">
       <div className="text-center max-w-4xl mx-auto">
         <p className="font-mono text-xs uppercase tracking-[0.25em] ink-faint">
-          06 — Contact
+          07 — Contact
         </p>
         <h2 className="font-display font-light text-[16vw] md:text-[9rem] leading-[0.9] tracking-[-0.03em] mt-8">
           Let's build <br />
@@ -94,9 +94,20 @@ export const Contact = () => {
           </a>
         </div>
 
+        <div className="mt-20 max-w-2xl mx-auto text-left">
+          <p className="font-mono text-[11px] uppercase tracking-[0.25em] ink-faint mb-3">
+            Start a project
+          </p>
+          <p className="text-lg md:text-xl leading-snug text-pretty">
+            Whether you need a website, an app, or a custom system —
+            fill in the form and I'll get back to you{" "}
+            <span className="gold">within 24 hours</span>.
+          </p>
+        </div>
+
         <form
           onSubmit={onSubmit}
-          className="mt-20 text-left grid gap-5 max-w-2xl mx-auto"
+          className="mt-8 text-left grid gap-5 max-w-2xl mx-auto"
           noValidate
         >
           <div className="grid sm:grid-cols-2 gap-5">
