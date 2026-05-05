@@ -52,7 +52,7 @@ export const Contact = () => {
     <section id="contact" className="py-24 md:py-40 container-edge">
       <div className="text-center max-w-4xl mx-auto">
         <p className="font-mono text-xs uppercase tracking-[0.25em] ink-faint">
-          06 — Contact
+          07 — Contact
         </p>
         <h2 className="font-display font-light text-[16vw] md:text-[9rem] leading-[0.9] tracking-[-0.03em] mt-8">
           Let's build <br />
