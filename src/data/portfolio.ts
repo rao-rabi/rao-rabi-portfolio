@@ -165,13 +165,13 @@ export const skills = [
   { name: "PostgreSQL", level: "Proficient", years: 3 },
   { name: "RAG & LLMs", level: "Proficient", years: 1 },
   { name: "WebSockets / Realtime", level: "Advanced", years: 2 },
-  { name: "REST API Design", level: "Expert", years: 4 },
+  { name: "REST API Design", level: "Expert", years: 5 },
   { name: "Tailwind CSS", level: "Expert", years: 3 },
 ];
 
 export const stats = [
-  { label: "Years building software", value: "4+" },
+  { label: "Years building software", value: "5+" },
   { label: "Live users served", value: "10k+" },
   { label: "Production projects", value: "20+" },
-  { label: "Countries reached", value: "5+" },
+  { label: "Happy clients worldwide", value: "8+" },
 ];
