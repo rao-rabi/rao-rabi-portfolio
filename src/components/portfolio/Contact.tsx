@@ -94,9 +94,20 @@ export const Contact = () => {
           </a>
         </div>
 
+        <div className="mt-20 max-w-2xl mx-auto text-left">
+          <p className="font-mono text-[11px] uppercase tracking-[0.25em] ink-faint mb-3">
+            Start a project
+          </p>
+          <p className="text-lg md:text-xl leading-snug text-pretty">
+            Whether you need a website, an app, or a custom system —
+            fill in the form and I'll get back to you{" "}
+            <span className="gold">within 24 hours</span>.
+          </p>
+        </div>
+
         <form
           onSubmit={onSubmit}
-          className="mt-20 text-left grid gap-5 max-w-2xl mx-auto"
+          className="mt-8 text-left grid gap-5 max-w-2xl mx-auto"
           noValidate
         >
           <div className="grid sm:grid-cols-2 gap-5">
