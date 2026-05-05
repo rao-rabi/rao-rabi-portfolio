@@ -33,6 +33,7 @@ const Index = () => {
       <Work />
       <Experience />
       <Skills />
+      <Testimonials />
       <Contact />
       <Footer />
     </main>
