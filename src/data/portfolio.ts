@@ -7,11 +7,30 @@ export const profile = {
   email: "rabirao1039@gmail.com",
   phone: "+92 304-8348165",
   github: "https://github.com/Rao-Rabi",
-  yearsReact: 4,
+  yearsReact: 5,
   yearsRN: 2,
   summary:
-    "Software Engineer with 4 years of expertise in React and 2 years in React Native. I architect scalable systems with Python & Django on the backend and Next.js on the frontend. Recently expanded into Generative AI — shipping RAG and LLM tools that serve thousands of live users.",
+    "Software Engineer with 5 years of expertise in React and 2 years in React Native. I architect scalable systems with Python & Django on the backend and Next.js on the frontend. Recently expanded into Generative AI — shipping RAG and LLM tools that serve thousands of live users.",
 };
+
+export const services = [
+  {
+    title: "Business Websites",
+    desc: "Fast, modern websites for salons, restaurants, clinics and local brands — built to convert visitors into customers.",
+  },
+  {
+    title: "Mobile Apps",
+    desc: "Native-feel iOS & Android apps with React Native — booking apps, marketplaces, loyalty tools and more.",
+  },
+  {
+    title: "Booking & Payments",
+    desc: "Online booking systems, Stripe checkout, subscriptions and automated invoicing wired straight into your site.",
+  },
+  {
+    title: "Custom Web Apps & SaaS",
+    desc: "Dashboards, admin panels and full-blown SaaS products — scalable from your first user to your ten thousandth.",
+  },
+];
 
 export const experience = [
   {
@@ -138,10 +157,10 @@ export const projects = [
 ];
 
 export const skills = [
-  { name: "React & Next.js", level: "Expert / Architect", years: 4 },
+  { name: "React & Next.js", level: "Expert / Architect", years: 5 },
   { name: "React Native", level: "Advanced", years: 2 },
   { name: "Python & Django", level: "Advanced", years: 3 },
-  { name: "TypeScript", level: "Advanced", years: 4 },
+  { name: "TypeScript", level: "Advanced", years: 5 },
   { name: "Node.js / Express", level: "Proficient", years: 3 },
   { name: "PostgreSQL", level: "Proficient", years: 3 },
   { name: "RAG & LLMs", level: "Proficient", years: 1 },
