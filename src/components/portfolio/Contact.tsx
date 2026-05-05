@@ -163,7 +163,7 @@ export const Footer = () => {
   return (
     <footer className="border-t border-border py-10">
       <div className="container-edge flex flex-wrap items-center justify-between gap-4 text-xs font-mono ink-faint uppercase tracking-wider">
-        <p>© {new Date().getFullYear()} Rao Muhammad Rabi Khan</p>
+        <p>© {new Date().getFullYear()} Rao M. Rabi Khan</p>
         <p>Designed & built in Faisalabad <span className="gold">✦</span> Pakistan</p>
       </div>
     </footer>
