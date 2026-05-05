@@ -3,6 +3,11 @@ import { ArrowUpRight, Mail, Phone, Github, Copy, Check, Send } from "lucide-rea
 import { useState } from "react";
 import { z } from "zod";
 import { toast } from "@/hooks/use-toast";
+import emailjs from "@emailjs/browser";
+
+const EMAILJS_SERVICE_ID = "service_ts675gm";
+const EMAILJS_TEMPLATE_ID = "template_qyyso29";
+const EMAILJS_PUBLIC_KEY = "wUY5IVNVoy1eObHQP";
 
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100),
