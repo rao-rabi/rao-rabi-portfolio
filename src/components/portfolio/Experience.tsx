@@ -7,7 +7,7 @@ export const Experience = () => {
       <div className="grid md:grid-cols-12 gap-10 md:gap-16">
         <div className="md:col-span-4">
           <p className="font-mono text-xs uppercase tracking-[0.25em] ink-faint">
-            03 — Experience
+            04 — Experience
           </p>
           <h2 className="font-display text-5xl md:text-6xl mt-6 leading-[0.95] tracking-tight sticky top-32">
             Where I've <em className="gold not-italic">worked</em>.
