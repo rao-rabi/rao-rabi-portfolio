@@ -7,7 +7,7 @@ export const Testimonials = () => {
       <div className="grid md:grid-cols-12 gap-10 md:gap-16 mb-14">
         <div className="md:col-span-5">
           <p className="font-mono text-xs uppercase tracking-[0.25em] ink-faint">
-            05 — Testimonials
+            06 — Testimonials
           </p>
           <h2 className="font-display text-5xl md:text-6xl mt-6 leading-[0.95] tracking-tight">
             What people <em className="gold not-italic">say</em>.
