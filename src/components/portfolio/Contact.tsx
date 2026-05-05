@@ -3,6 +3,11 @@ import { ArrowUpRight, Mail, Phone, Github, Copy, Check, Send } from "lucide-rea
 import { useState } from "react";
 import { z } from "zod";
 import { toast } from "@/hooks/use-toast";
+import emailjs from "@emailjs/browser";
+
+const EMAILJS_SERVICE_ID = "service_ts675gm";
+const EMAILJS_TEMPLATE_ID = "template_qyyso29";
+const EMAILJS_PUBLIC_KEY = "wUY5IVNVoy1eObHQP";
 
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100),
@@ -14,6 +19,7 @@ export const Contact = () => {
   const [copied, setCopied] = useState(false);
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [loading, setLoading] = useState(false);
 
   const copyEmail = async () => {
     try {
@@ -25,7 +31,7 @@ export const Contact = () => {
     }
   };
 
-  const onSubmit = (e: React.FormEvent) => {
+  const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const result = contactSchema.safeParse(form);
     if (!result.success) {
@@ -37,15 +43,35 @@ export const Contact = () => {
       return;
     }
     setErrors({});
-    const subject = encodeURIComponent(`New project inquiry from ${result.data.name}`);
-    const body = encodeURIComponent(
-      `${result.data.message}\n\n— ${result.data.name}\n${result.data.email}`
-    );
-    window.location.href = `mailto:${profile.email}?subject=${subject}&body=${body}`;
-    toast({
-      title: "Opening your email app…",
-      description: "If nothing happens, copy my email above and write me directly.",
-    });
+    setLoading(true);
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name: result.data.name,
+          to_name: "Rao Rabi",
+          from_email: result.data.email,
+          to_email: profile.email,
+          message: result.data.message,
+        },
+        EMAILJS_PUBLIC_KEY
+      );
+      toast({
+        title: "Message sent ✓",
+        description: "Thanks — I'll get back to you within 24 hours.",
+      });
+      setForm({ name: "", email: "", message: "" });
+    } catch (err) {
+      console.error(err);
+      toast({
+        title: "Something went wrong",
+        description: "Please try again, or email me directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -159,9 +185,10 @@ export const Contact = () => {
           </div>
           <button
             type="submit"
-            className="group inline-flex items-center justify-center gap-2 px-6 py-4 bg-ink text-background rounded-sm font-medium text-sm hover:bg-gold transition-colors w-full sm:w-auto sm:justify-self-start"
+            disabled={loading}
+            className="group inline-flex items-center justify-center gap-2 px-6 py-4 bg-ink text-background rounded-sm font-medium text-sm hover:bg-gold transition-colors w-full sm:w-auto sm:justify-self-start disabled:opacity-60 disabled:cursor-not-allowed"
           >
-            Send message
+            {loading ? "Sending…" : "Send message"}
             <Send className="size-4 group-hover:translate-x-0.5 transition-transform" />
           </button>
         </form>
