@@ -103,7 +103,7 @@ export const projects = [
     name: "Talkative Buddy",
     tag: "Generative AI Agent",
     year: "2025",
-    url: null,
+    url: "https://talktivebuddy.com/",
     blurb:
       "A specialized AI agent embedded into websites — context-aware answers powered by LLMs and Retrieval-Augmented Generation, reducing manual customer support significantly.",
     stack: ["Python", "RAG", "LLMs", "Vector DB"],
