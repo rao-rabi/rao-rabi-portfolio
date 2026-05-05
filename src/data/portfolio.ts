@@ -1,5 +1,5 @@
 export const profile = {
-  name: "Rao Muhammad Rabi Khan",
+  name: "Rao M. Rabi Khan",
   shortName: "Rabi Khan",
   title: "Software Engineer",
   tagline: "Web & Mobile Architect — building fast, scalable products with React, Next.js & AI.",
