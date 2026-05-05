@@ -31,7 +31,7 @@ export const Contact = () => {
     }
   };
 
-  const onSubmit = (e: React.FormEvent) => {
+  const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const result = contactSchema.safeParse(form);
     if (!result.success) {
@@ -43,15 +43,35 @@ export const Contact = () => {
       return;
     }
     setErrors({});
-    const subject = encodeURIComponent(`New project inquiry from ${result.data.name}`);
-    const body = encodeURIComponent(
-      `${result.data.message}\n\n— ${result.data.name}\n${result.data.email}`
-    );
-    window.location.href = `mailto:${profile.email}?subject=${subject}&body=${body}`;
-    toast({
-      title: "Opening your email app…",
-      description: "If nothing happens, copy my email above and write me directly.",
-    });
+    setLoading(true);
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name: result.data.name,
+          to_name: "Rao Rabi",
+          from_email: result.data.email,
+          to_email: profile.email,
+          message: result.data.message,
+        },
+        EMAILJS_PUBLIC_KEY
+      );
+      toast({
+        title: "Message sent ✓",
+        description: "Thanks — I'll get back to you within 24 hours.",
+      });
+      setForm({ name: "", email: "", message: "" });
+    } catch (err) {
+      console.error(err);
+      toast({
+        title: "Something went wrong",
+        description: "Please try again, or email me directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
