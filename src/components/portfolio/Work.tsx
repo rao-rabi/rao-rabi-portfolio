@@ -8,7 +8,7 @@ export const Work = () => {
         <div className="flex items-end justify-between mb-16 gap-6 flex-wrap">
           <div>
             <p className="font-mono text-xs uppercase tracking-[0.25em] ink-faint">
-              02 — Selected Work
+              03 — Selected Work
             </p>
             <h2 className="font-display text-5xl md:text-6xl mt-6 leading-[0.95] tracking-tight">
               Things I've <em className="gold not-italic">built</em>.

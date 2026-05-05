@@ -7,7 +7,7 @@ export const Skills = () => {
         <div className="flex items-end justify-between mb-12 flex-wrap gap-4">
           <div>
             <p className="font-mono text-xs uppercase tracking-[0.25em] ink-faint">
-              04 — Toolkit
+              05 — Toolkit
             </p>
             <h2 className="font-display text-5xl md:text-6xl mt-6 leading-[0.95] tracking-tight">
               The <em className="gold not-italic">stack</em>.

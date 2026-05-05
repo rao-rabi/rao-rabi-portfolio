@@ -6,7 +6,7 @@ export const About = () => {
       <div className="grid md:grid-cols-12 gap-10 md:gap-16">
         <div className="md:col-span-4">
           <p className="font-mono text-xs uppercase tracking-[0.25em] ink-faint">
-            01 — About
+            02 — About
           </p>
           <h2 className="font-display text-5xl md:text-6xl mt-6 leading-[0.95] tracking-tight">
             A senior engineer who <em className="gold not-italic">ships</em>.
