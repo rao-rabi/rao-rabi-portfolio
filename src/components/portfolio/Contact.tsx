@@ -185,9 +185,10 @@ export const Contact = () => {
           </div>
           <button
             type="submit"
-            className="group inline-flex items-center justify-center gap-2 px-6 py-4 bg-ink text-background rounded-sm font-medium text-sm hover:bg-gold transition-colors w-full sm:w-auto sm:justify-self-start"
+            disabled={loading}
+            className="group inline-flex items-center justify-center gap-2 px-6 py-4 bg-ink text-background rounded-sm font-medium text-sm hover:bg-gold transition-colors w-full sm:w-auto sm:justify-self-start disabled:opacity-60 disabled:cursor-not-allowed"
           >
-            Send message
+            {loading ? "Sending…" : "Send message"}
             <Send className="size-4 group-hover:translate-x-0.5 transition-transform" />
           </button>
         </form>
