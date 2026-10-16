@@ -157,10 +157,10 @@ export const projects = [
     name: "Athlo",
     tag: "Sports & Ticketing",
     year: "2023",
-    url: null,
+    url: "https://www.athlo.app/",
     blurb:
       "A feature-rich sports app letting users create matches, follow news, and buy tickets — built around community and engagement.",
-    stack: ["React Native", "Node.js"],
+    stack: ["React Native", "Python", "Django"],
   },
   {
     name: "Parchi",

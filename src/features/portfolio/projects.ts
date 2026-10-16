@@ -1,0 +1,81 @@
+const projectDetails = [
+  {
+    problem: 'Bring workforce scheduling, people records, payroll, and daily operations into one product.',
+    contribution: 'Built the platform from scratch across Next.js and Django; lead the frontend team.',
+    solution: 'A workforce SaaS connecting planning, HR, operational modules, payroll, and team communication.',
+    slug: 'upthyme', name: 'UpThyme', category: 'Workforce SaaS', number: '01',
+    summary: 'A workforce platform built from scratch, from scheduling and timesheets to payroll and team communication.',
+    role: 'I developed UpThyme from scratch and lead its frontend team. My work spans the Next.js / Django product and the workforce modules below.',
+    tags: ['Next.js', 'Django', 'Workforce management'], theme: 'blue',
+    context: 'UpThyme brings workforce planning, HR records, daily operations, and team communication into one SaaS product.',
+    scope: [
+      { title: 'Workforce planning', description: 'Scheduling, timesheets, and paid time off (PTO).' },
+      { title: 'People & organisation', description: 'Organisation management, documents, and reviews.' },
+      { title: 'Daily operations', description: 'Forms, job tracking, and task management.' },
+      { title: 'Payroll & communication', description: 'Payroll and a WhatsApp-style team chat system.' },
+    ],
+    outcome: '',
+    pending: 'The supplied product overview is shown above. Further implementation examples and verified outcomes are still being gathered.',
+    url: 'https://www.upthyme.com/',
+  },
+  {
+    problem: 'Bring match creation, sports news, and ticket purchasing together on mobile.',
+    contribution: 'Built the React Native application and Python / Django backend.',
+    solution: 'A mobile sports product backed by Django, covering the confirmed match, news, and ticketing experiences.',
+    slug: 'athlo', name: 'Athlo', category: 'Mobile app · Sports & ticketing', number: '02',
+    summary: 'A sports mobile app I built with React Native and a Python / Django backend.',
+    role: 'I built Athlo’s mobile app using React Native and its backend using Python and Django.',
+    tags: ['React Native', 'Python', 'Django'], theme: 'mobile',
+    context: 'Athlo brings match creation, sports news, and ticket purchasing into a mobile product.',
+    scope: [
+      { title: 'Mobile application', description: 'Built the mobile app with React Native.' },
+      { title: 'Backend development', description: 'Built the backend using Python and Django.' },
+      { title: 'Sports experience', description: 'Developed a product covering match creation, news, and ticket purchasing.' },
+    ],
+    outcome: '',
+    pending: 'The supplied app overview is shown above. Further implementation examples and verified outcomes are still being gathered.',
+    url: 'https://www.athlo.app/',
+  },
+  {
+    problem: 'Connect quote intake to work orders and invoicing without repeated manual handoffs.',
+    contribution: 'Built the n8n automation linking quotes, operational records, and QuickBooks invoicing.',
+    solution: 'An n8n workflow that passes customer and job details between intake, work orders, spreadsheets, and invoice management.',
+    slug: 'rapidships', name: 'RapidShips', category: 'AI & operations automation', number: '03',
+    summary: 'From custom quote intake to QuickBooks invoicing: a connected logistics workflow built with n8n.',
+    role: 'I built the automation for RapidShips using n8n. My scope covered the connected operations workflow below, within the wider agency project.',
+    tags: ['n8n', 'Twilio', 'Firebase', 'AWS', 'QuickBooks'], theme: 'dark',
+    context: 'RapidShips needed custom quote intake, work orders, operational spreadsheets, and QuickBooks invoice management to flow together without repeated manual data entry and handoffs.',
+    scope: [
+      { title: 'Quote intake → work orders', description: 'Automated custom quote intake and passed customer and job details into work orders.' },
+      { title: 'Operational records', description: 'Automated spreadsheet updates as work progressed, keeping job records connected throughout the workflow.' },
+      { title: 'Work completion → invoicing', description: 'Connected completed work orders to automated invoice creation and invoice management in QuickBooks.' },
+      { title: 'Workflow orchestration', description: 'Used n8n to connect AI automation, operational spreadsheets, and accounting. The project stack also included Twilio, Firebase, and AWS.' },
+    ],
+    outcome: 'A connected, automated operations workflow from custom quote intake through completed work orders to invoice management in QuickBooks.',
+    pending: 'Approved workflow screenshots and any measured business results are still being gathered.',
+    url: 'https://apexarabia.sa/case-study/rapidships',
+  },
+  {
+    problem: 'Connect call and chat bookings with a shared calendar and notifications.',
+    contribution: 'Built n8n booking workflows with Google Calendar and WhatsApp notifications.',
+    solution: 'Call and chat appointment intake connected through n8n to Google Calendar booking and notifications for both the doctor and patient.',
+    slug: 'dental-clinic', name: 'Dental Clinic', category: 'Appointment automation', number: '04',
+    summary: 'Call and chat booking connected to Google Calendar, with WhatsApp notifications for the doctor and patient.',
+    role: 'I built scheduling and appointment booking automation for a dental clinic using n8n.',
+    tags: ['n8n', 'Google Calendar', 'WhatsApp'], theme: 'cream',
+    context: 'The clinic needed a connected appointment booking workflow across calls, chat, calendar bookings, and notifications.',
+    scope: [
+      { title: 'AI call & chat intake', description: 'Implemented AI to attend calls and reply to customers as part of the booking workflow.' },
+      { title: 'Calendar booking', description: 'Connected the booking workflow to Google Calendar using n8n.' },
+      { title: 'WhatsApp notifications', description: 'Informed both the doctor and the patient about bookings through WhatsApp.' },
+    ],
+    outcome: 'A connected booking workflow spanning calls and chat, Google Calendar appointments, and WhatsApp notifications to the doctor and patient.',
+    pending: 'The publishable clinic name, approved workflow screenshots, and any measured business results are still being gathered.',
+    url: '',
+  },
+];
+
+const featuredOrder = ['upthyme', 'rapidships', 'athlo', 'dental-clinic'];
+export const selectedProjects = [...projectDetails].sort((left, right) =>
+  featuredOrder.indexOf(left.slug) - featuredOrder.indexOf(right.slug)
+);
