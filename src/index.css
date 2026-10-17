@@ -4,6 +4,8 @@
 @import './styles/project-visuals.css';
 @import './styles/responsive.css';
 @import './styles/refinements.css';
+@import './styles/case-study.css';
+@import './styles/credibility.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

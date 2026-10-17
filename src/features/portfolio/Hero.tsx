@@ -1,4 +1,4 @@
-import { ArrowRight, ArrowDown, CalendarDays, MessageCircle, Phone } from 'lucide-react';
+import { ArrowRight, Check } from 'lucide-react';
 import profileImage from '@/assets/profile.webp';
 import productScreenshot from '@/assets/upthyme-product.webp';
 
@@ -11,7 +11,7 @@ export function Hero() {
           <div>
             <p className="hero-greeting">YOUR ENGINEERING PARTNER</p>
             <p className="hero-name">I’m Rao Rabi.</p>
-            <p className="hero-role">Senior Software Engineer <span>·</span> Frontend Team Lead</p>
+            <p className="hero-role">Senior Software Engineer</p>
           </div>
         </div>
         <h1 className="hero-headline">Build better products.<br />Automate the busywork.</h1>
@@ -31,21 +31,15 @@ function HeroShowcase() {
     <div className="hero-showcase">
       <figure className="hero-product">
         <div className="browser-bar"><span aria-hidden="true"><i /><i /><i /></span><span>UpThyme / Workforce SaaS</span></div>
-        <img src={productScreenshot} alt="UpThyme scheduling and payroll product visual supplied by Rao Rabi" />
-        <figcaption>UpThyme · supplied product visual</figcaption>
+        <img src={productScreenshot} alt="Concept cover illustrating UpThyme scheduling and payroll" />
+        <figcaption>UpThyme · concept cover, not a production screenshot</figcaption>
       </figure>
-      <aside className="hero-workflow" aria-label="Dental clinic workflow illustration">
-        <h2>Connected booking</h2>
-        <p>Dental clinic · n8n workflow</p>
-        <ol>
-          {[{icon:Phone,title:'AI call or chat',detail:'Attend calls and reply.'},{icon:CalendarDays,title:'Google Calendar',detail:'Book the appointment.'},{icon:MessageCircle,title:'WhatsApp',detail:'Inform doctor and patient.'}].map(({icon:Icon,title,detail},index)=>(
-            <li key={title}>
-              {index>0 && <ArrowDown size={16} className="hero-flow-arrow" aria-hidden="true" />}
-              <div><span className="hero-flow-icon"><Icon size={19} /></span><div><strong>{title}</strong><p>{detail}</p></div></div>
-            </li>
-          ))}
-        </ol>
-        <small>Workflow illustration</small>
+      <aside className="hero-workflow hero-delivery" aria-label="My UpThyme contribution">
+        <p className="eyebrow">MY UPTHYME DELIVERY</p>
+        <h2>Built from scratch.</h2>
+        <p>Next.js + Django</p>
+        <ul>{['Scheduling & timesheets', 'Payroll & people records', 'Tasks & team chat'].map(item => <li key={item}><Check size={16} aria-hidden="true" />{item}</li>)}</ul>
+        <a className="text-link" href="/work/upthyme">Explore UpThyme <ArrowRight size={16} /></a>
       </aside>
     </div>
   );

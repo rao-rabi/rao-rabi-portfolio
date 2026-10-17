@@ -7,6 +7,7 @@ import Index from "./pages/Index.tsx";
 import AllProjects from "./pages/AllProjects";
 import CaseStudy from "./pages/CaseStudy";
 import NotFound from "./pages/NotFound.tsx";
+import { WhatsAppContact } from "./features/portfolio/WhatsAppContact";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +23,7 @@ const App = () => (
           <Route path="/work/:slug" element={<CaseStudy />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <WhatsAppContact />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

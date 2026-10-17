@@ -16,6 +16,7 @@ export function Contact() {
         <div>
           <h2>Discuss your project</h2>
           <p>A product idea, an internal tool, or a workflow that needs less manual work. Tell me what you have in mind.</p>
+          <p className="engagement-note">Available for fixed-scope freelance projects and ongoing development engagements.</p>
           <a className="email-link" href={`mailto:${profile.email}`}>{profile.email}<ArrowUpRight size={20} /></a>
           <button className="text-link copy-button" onClick={copyEmail}>Copy email address<Copy size={15} /></button>
           <p className="copy-status" role="status">{status}</p>

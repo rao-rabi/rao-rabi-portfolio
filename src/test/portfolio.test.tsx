@@ -3,6 +3,8 @@ import { afterEach, describe, expect, it, vi } from 'vitest';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import { Contact } from '@/features/portfolio/Contact';
 import { Header } from '@/features/portfolio/Layout';
+import { Hero } from '@/features/portfolio/Hero';
+import { Work, Services } from '@/features/portfolio/HomeSections';
 import CaseStudy from '@/pages/CaseStudy';
 afterEach(() => { cleanup(); vi.restoreAllMocks(); });
 describe('Contact flow', () => {
@@ -37,10 +39,42 @@ it('keeps RapidShips agency scope distinct from personal contribution', () => {
     expect(screen.getByText(/I built the automation for RapidShips using n8n/)).toBeInTheDocument();
 });
 
-it('shows the confirmed UpThyme modules without claiming outcomes', () => {
+it('shows the confirmed UpThyme modules and delivered outcome', () => {
     vi.spyOn(window, 'scrollTo').mockImplementation(() => {});
     render(<MemoryRouter initialEntries={['/work/upthyme']}><Routes><Route path="/work/:slug" element={<CaseStudy />}/></Routes></MemoryRouter>);
     expect(screen.getByText(/I developed UpThyme from scratch/)).toBeInTheDocument();
-    expect(screen.getByText(/Payroll and a WhatsApp-style team chat system/)).toBeInTheDocument();
-    expect(screen.getByText('No quantified performance or business results are claimed.')).toBeInTheDocument();
+    expect(screen.getByText(/Developed the payroll system and WhatsApp-style team chat/)).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'The delivered outcome' })).toBeInTheDocument();
+});
+
+it.each([
+    ['digital-parchi', 'Digital Parchi'],
+    ['propertyfy', 'PropertyFy'],
+    ['grammar-guru', 'Grammar Guru'],
+    ['decoded-skin', 'Decoded Skin'],
+    ['talkative-buddy', 'Talkative Buddy'],
+    ['maardhcum', 'Maardhcum'],
+])('opens the %s case study with its own image and delivery content', (slug, name) => {
+    vi.spyOn(window, 'scrollTo').mockImplementation(() => {});
+    render(<MemoryRouter initialEntries={[`/work/${slug}`]}><Routes><Route path="/work/:slug" element={<CaseStudy />}/></Routes></MemoryRouter>);
+    expect(screen.getByRole('heading', { level: 1, name })).toBeInTheDocument();
+    expect(document.querySelector('.case-hero-preview figcaption')).toBeNull();
+    expect(document.querySelector('.case-imagery .project-screenshot figcaption')).toBeNull();
+    expect(screen.getAllByRole('img', { name: new RegExp(name) })).toHaveLength(2);
+    expect(screen.getByRole('heading', { name: 'The delivered outcome' })).toBeInTheDocument();
+    expect(screen.getByRole('navigation', { name: 'Case study sections' })).toBeInTheDocument();
+});
+
+it('keeps the hero focused on UpThyme and identifies concept imagery', () => {
+    render(<Hero />);
+    expect(screen.getByLabelText('My UpThyme contribution')).toHaveTextContent('Built from scratch.');
+    expect(screen.queryByText(/Dental clinic/i)).not.toBeInTheDocument();
+    expect(screen.getByText(/concept cover, not a production screenshot/)).toBeInTheDocument();
+});
+
+it('keeps project cards free of cover badges and links services to delivery examples', () => {
+    render(<MemoryRouter><Work /><Services /></MemoryRouter>);
+    expect(screen.queryByText('Concept cover')).not.toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /Explore an operations platform/ })).toHaveAttribute('href', '/work/propertyfy');
+    expect(screen.queryByRole('link', { name: 'Discuss your project' })).not.toBeInTheDocument();
 });

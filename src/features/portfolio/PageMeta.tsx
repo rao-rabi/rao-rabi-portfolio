@@ -15,7 +15,7 @@ export function PageMeta({ title, description, path }: { title: string; descript
     document.querySelector<HTMLLinkElement>('link[rel="canonical"]')?.setAttribute('href', origin + path);
     const anchor = document.getElementById(window.location.hash.slice(1));
     if (anchor) anchor.scrollIntoView();
-    else window.scrollTo(0, 0);
+    else window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   }, [title, description, path]);
   return null;
 }

@@ -11,3 +11,34 @@
 .project-list .automation-visual,.project-list .project-screenshot img{height:410px}
 @media(max-width:600px){.project-list .automation-visual,.project-list .project-screenshot img{height:370px}}
 .screenshot-upthyme{background:#f4f7f1}.project:hover,.primary:hover{transform:none}
+
+.project-screenshot{background:#f5f6ef}.project-screenshot figcaption{color:#43584e}.additional-case-studies .project-copy h3{margin-top:12px}.archive-notes{margin-top:45px}.case-outcome{border:1px solid #cbdcd0;background:#edf4ec;padding:26px;border-radius:10px}.case-body .case-outcome>p:last-child{margin-bottom:0}
+
+.project-archive-callout{display:flex;align-items:center;justify-content:space-between;gap:32px;margin-top:36px;padding:38px 40px;background:#105e5b;color:#fff;border:1px solid #105e5b;border-radius:12px;text-decoration:none;box-shadow:0 10px 25px #105e5b12;transition:background .2s,box-shadow .2s}
+.project-archive-callout .eyebrow{color:#c0e2d9}
+.project-archive-callout h3{font-size:clamp(24px,2.4vw,34px);line-height:1.2;margin:12px 0}
+.project-archive-callout p{color:#e1eeea;font-size:17px;margin:0;max-width:620px}
+.archive-callout-action{display:inline-flex;align-items:center;gap:20px;flex-shrink:0;background:#faf9f6;color:#105e5b;padding:18px 22px;border-radius:6px;font-weight:600}
+.archive-callout-action svg{transition:transform .25s}
+.project-archive-callout:hover{background:#084e4b;box-shadow:0 12px 30px #105e5b26}
+.project-archive-callout:hover svg,.project-archive-callout:focus-visible svg{transform:translate(3px,-3px)}
+.project-archive-callout:focus-visible{outline:3px solid #105e5b;outline-offset:5px}
+.archive-back{margin-bottom:30px}
+.case-imagery h3{margin-top:30px;margin-bottom:18px}
+@media(max-width:700px){.project-archive-callout{align-items:flex-start;flex-direction:column;gap:24px;padding:28px 24px}.archive-callout-action{justify-content:space-between;width:100%}.project-archive-callout p{font-size:16px}}
+.archive-callout-action{position:relative;overflow:hidden;isolation:isolate}
+.archive-callout-action::after{content:'';position:absolute;inset:-50% -100%;background:linear-gradient(110deg,transparent 40%,#7bcbb74d 50%,transparent 60%);transform:translateX(-60%);pointer-events:none;opacity:0}
+@media(prefers-reduced-motion:no-preference){
+.project-archive-callout.has-entered{animation:archive-arrive .65s ease-out both}
+.has-entered .archive-callout-action{animation:archive-nudge .85s ease-in-out .65s 2}
+.has-entered .archive-callout-action::after{animation:archive-shine 1.15s ease-out .5s both}
+.project-archive-callout:hover .archive-callout-action,.project-archive-callout:focus-visible .archive-callout-action{animation:none}
+}
+@keyframes archive-arrive{from{transform:translateY(18px);opacity:.65}to{transform:translateY(0);opacity:1}}
+@keyframes archive-nudge{0%,100%{transform:translateY(0)}45%{transform:translateY(-6px);box-shadow:0 8px 18px #002c2a33}}
+@keyframes archive-shine{0%{transform:translateX(-60%);opacity:0}20%{opacity:1}80%{opacity:1}100%{transform:translateX(60%);opacity:0}}
+.whatsapp-contact{position:fixed;right:max(24px,env(safe-area-inset-right));bottom:calc(24px + env(safe-area-inset-bottom));z-index:15;display:flex;align-items:center;gap:12px;padding:13px 20px 13px 15px;border:1px solid #ffffff75;border-radius:50px;background:#126b48;color:white;box-shadow:0 5px 22px #123e3530;font-size:15px;font-weight:600;line-height:1.25;transition:background .2s,transform .2s}
+.whatsapp-contact-label{display:block;font-size:11px;font-weight:450;margin-top:3px;color:#e1f3e9}
+.whatsapp-contact:hover{background:#0a5538;transform:translateY(-3px)}
+.whatsapp-contact:focus-visible{outline:3px solid #126b48;outline-offset:4px}
+@media(max-width:600px){.whatsapp-contact{right:16px;bottom:calc(16px + env(safe-area-inset-bottom));width:56px;height:56px;padding:0;justify-content:center}.whatsapp-contact>span{display:none}}
