@@ -47,6 +47,22 @@ it('shows the confirmed UpThyme modules and delivered outcome', () => {
     expect(screen.getByRole('heading', { name: 'The delivered outcome' })).toBeInTheDocument();
 });
 
+it('shows confirmed trailer ownership and routes case-study contact links to its prefilled form', () => {
+    vi.spyOn(window, 'scrollTo').mockImplementation(() => {});
+    render(<MemoryRouter initialEntries={['/work/3d-trailer-builder']}><Routes><Route path="/work/:slug" element={<CaseStudy />}/></Routes></MemoryRouter>);
+    expect(screen.getByText(/I built 3D Trailer Builder from scratch/)).toHaveTextContent('Next.js, Three.js, Airtable, and Node.js');
+    expect(screen.getByRole('heading', { name: 'My role' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Tools & technology' })).toBeInTheDocument();
+    const details = screen.getByLabelText('Project details');
+    expect(details).toHaveValue('I’m interested in something like 3D Trailer Builder.\n\n');
+    fireEvent.change(details, { target: { value: 'I need a configurator for custom furniture.' } });
+    for (const link of screen.getAllByRole('link', { name: 'Discuss your project' })) {
+        expect(link).toHaveAttribute('href', '#contact');
+        fireEvent.click(link);
+    }
+    expect(details).toHaveValue('I need a configurator for custom furniture.');
+});
+
 it.each([
     ['digital-parchi', 'Digital Parchi'],
     ['propertyfy', 'PropertyFy'],

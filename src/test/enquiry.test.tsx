@@ -19,6 +19,26 @@ function fillEnquiry() {
 function submit() { fireEvent.click(screen.getByRole('button', { name: 'Discuss your project' })); }
 
 describe('Project enquiry form', () => {
+  it('starts a case-study enquiry with editable project context and sends the edited message', async () => {
+    send.mockResolvedValue(undefined);
+    render(<EnquiryForm projectName="Athlo" />);
+    expect(screen.getByLabelText('Project details')).toHaveValue('I’m interested in something like Athlo.\n\n');
+    fillEnquiry();
+    const details = 'I’m interested in something like Athlo, for a local sports community.';
+    fireEvent.change(screen.getByLabelText('Project details'), { target: { value: details } });
+    submit();
+    expect(await screen.findByRole('status')).toHaveTextContent('sent');
+    expect(send).toHaveBeenCalledWith(expect.objectContaining({ details }));
+  });
+  it('does not overwrite an edited project enquiry on rerender or delivery failure', async () => {
+    send.mockRejectedValue(new Error('Please email me directly.'));
+    const { rerender } = render(<EnquiryForm projectName="3D Trailer Builder" />);
+    fillEnquiry();
+    rerender(<EnquiryForm projectName="3D Trailer Builder" />);
+    submit();
+    expect(await screen.findByRole('alert')).toBeInTheDocument();
+    expect(screen.getByLabelText('Project details')).toHaveValue('We need an internal scheduling tool for our team.');
+  });
   it('validates required fields and invalid emails before sending', async () => {
     render(<EnquiryForm />);
     submit();

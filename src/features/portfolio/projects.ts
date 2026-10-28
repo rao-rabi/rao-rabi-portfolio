@@ -1,6 +1,6 @@
 const projectDetails = [
   {
-    slug: 'upthyme', name: 'UpThyme', category: 'Workforce SaaS', number: '01', theme: 'blue',
+    slug: 'upthyme', projectTypes: ['web'], name: 'UpThyme', category: 'Workforce SaaS', number: '01', theme: 'blue',
     summary: 'One workforce platform, from planning the first shift to running payroll and keeping the team connected.',
     problem: 'Scheduling, attendance, HR records, and payroll belong to the same working day. The product needed to bring them together.',
     context: 'UpThyme spans the operational life of a workforce: who is scheduled, what time they worked, which leave is approved, what needs to get done, and how that work reaches payroll. Building the product meant connecting those responsibilities within a shared SaaS experience.',
@@ -19,7 +19,7 @@ const projectDetails = [
     url: 'https://www.upthyme.com/',
   },
   {
-    slug: 'athlo', name: 'Athlo', category: 'Mobile sports platform', number: '02', theme: 'mobile',
+    slug: 'athlo', projectTypes: ['app'], name: 'Athlo', category: 'Mobile sports platform', number: '02', theme: 'mobile',
     summary: 'A sports ecosystem in your pocket: find a game, organise a team, follow the action, and stay part of the community.',
     problem: 'Playing, organising, coaching, and following sport create different needs. Athlo brings them into one mobile experience.',
     context: 'Athlo serves players, parents, coaches, organisers, and fans. Its scope reaches beyond sports content: people can discover nearby pickup games, coordinate teams, book coaching, purchase event tickets, and connect with sports communities.',
@@ -38,7 +38,7 @@ const projectDetails = [
     url: 'https://apps.apple.com/pk/app/athlo-pickup-games-scores/id6745604131',
   },
   {
-    slug: 'rapidships', name: 'RapidShips', category: 'AI & operations automation', number: '03', theme: 'dark',
+    slug: 'rapidships', projectTypes: ['ai'], name: 'RapidShips', category: 'AI & operations automation', number: '03', theme: 'dark',
     summary: 'From a custom quote to a completed work order and a QuickBooks invoice: one connected operational workflow.',
     problem: 'Every manual handoff between quotes, work orders, spreadsheets, and invoices creates another point where the same information has to be entered again.',
     context: 'RapidShips needed its operational stages to flow into each other. Customer and job details had to move from quote intake into work orders, records needed to stay updated as work progressed, and completed jobs needed to reach invoice management.',
@@ -56,7 +56,7 @@ const projectDetails = [
     url: 'https://apexarabia.sa/case-study/rapidships',
   },
   {
-    slug: 'dental-clinic', name: 'Dental Clinic', category: 'AI appointment booking', number: '04', theme: 'cream',
+    slug: 'dental-clinic', projectTypes: ['ai'], name: 'Dental Clinic', category: 'AI appointment booking', number: '04', theme: 'cream',
     summary: 'AI handles the conversation. n8n connects the booking. The doctor and patient stay informed through WhatsApp.',
     problem: 'A booking request is only useful when it becomes a calendar appointment and reaches the people who need to know about it.',
     context: 'The clinic’s workflow starts in a call or chat and ends with a scheduled appointment and notifications. The delivery needed to connect the conversational step with the practical actions that follow it.',
@@ -73,7 +73,7 @@ const projectDetails = [
     url: '',
   },
   {
-    slug: 'maardhcum', name: 'Maardhcum', category: 'Automotive marketplace', number: '05', theme: 'marketplace',
+    slug: 'maardhcum', projectTypes: ['web', 'app'], name: 'Maardhcum', category: 'Automotive marketplace', number: '05', theme: 'marketplace',
     summary: 'A full automotive marketplace: digital showrooms, sales, rentals, buying, and live auctions across web and mobile.',
     problem: 'An automotive platform needs to support more than a vehicle listing. It has to connect showrooms, customers, transactions, verification, and live bidding.',
     context: 'Maardhcum brings showroom registration, vehicle sales and rentals, purchasing, auctions, and document verification into one automotive ecosystem. Alongside product browsing, its auction experience introduces the demands of real-time interaction across web and mobile.',
@@ -91,7 +91,7 @@ const projectDetails = [
     url: 'https://www.maardhcum.com/',
   },
   {
-    slug: 'talkative-buddy', name: 'Talkative Buddy', category: 'AI website assistant', number: '06', theme: 'buddy',
+    slug: 'talkative-buddy', projectTypes: ['ai'], name: 'Talkative Buddy', category: 'AI website assistant', number: '06', theme: 'buddy',
     summary: 'Turn business knowledge into a conversation visitors can actually use.',
     problem: 'A website can contain the right answer and still leave a visitor searching for it. A useful assistant needs relevant business context, not just a language model.',
     context: 'Talkative Buddy brings an AI agent into the website itself. Retrieval-augmented generation connects the conversation with relevant information, giving the answering process a business-specific source of context.',
@@ -108,7 +108,7 @@ const projectDetails = [
     url: 'https://talktivebuddy.com/',
   },
   {
-    slug: 'grammar-guru', name: 'Grammar Guru', category: 'AI writing assistant', number: '07', theme: 'grammar',
+    slug: 'grammar-guru', projectTypes: ['ai'], name: 'Grammar Guru', category: 'AI writing assistant', number: '07', theme: 'grammar',
     summary: 'From a first draft to clearer writing: grammar, spelling, punctuation, and language improvements in one web tool.',
     problem: 'Correcting a sentence is only part of the writing task. Writers also need to understand where tone, clarity, structure, and readability can improve.',
     context: 'Grammar Guru is an AI writing assistant for students, professionals, writers, and businesses. Users can paste or upload text, review corrections, and receive suggestions that go beyond isolated spelling errors.',
@@ -125,7 +125,7 @@ const projectDetails = [
     url: 'https://www.grammarguru.net/',
   },
   {
-    slug: 'decoded-skin', name: 'Decoded Skin', category: 'Skincare & product verification', number: '08', theme: 'skincare',
+    slug: 'decoded-skin', projectTypes: ['web'], name: 'Decoded Skin', category: 'Skincare & product verification', number: '08', theme: 'skincare',
     summary: 'A skincare platform that pairs product storytelling with authenticity checks and a path to local stockists.',
     problem: 'A premium skincare website needs to explain the product, help customers verify its authenticity, and connect them with the business behind it.',
     context: 'Decoded Skin brings scientific product information into a luxury web experience. Its scope extends beyond brand presentation to a product-verification portal, distributor information, and enquiry workflows.',
@@ -143,7 +143,7 @@ const projectDetails = [
     url: 'https://www.decodedskin.com/',
   },
   {
-    slug: 'digital-parchi', name: 'Digital Parchi', category: 'Mobile retail & billing', number: '09', theme: 'retail',
+    slug: 'digital-parchi', projectTypes: ['app'], name: 'Digital Parchi', category: 'Mobile retail & billing', number: '09', theme: 'retail',
     summary: 'A smartphone-based retail workspace connecting point-of-sale billing with digital inventory and Bluetooth billing.',
     problem: 'Retail work moves between the counter, the stock record, and the bill. Those tasks need to work together in the same everyday flow.',
     context: 'Digital Parchi is a mobile ERP solution for small and medium-sized retailers. It turns a smartphone into a point-of-sale terminal, connecting digital inventory management with the documentation behind a sale.',
@@ -161,7 +161,7 @@ const projectDetails = [
     url: '',
   },
   {
-    slug: 'propertyfy', name: 'PropertyFy', category: 'Property, rental & financial management', number: '10', theme: 'property',
+    slug: 'propertyfy', projectTypes: ['web'], name: 'PropertyFy', category: 'Property, rental & financial management', number: '10', theme: 'property',
     summary: 'A property management platform connecting rental and sales dashboards with tenant records, invoices, payments, and transfers.',
     problem: 'A property is more than an available listing. Every rental or sale connects people, agreements, invoices, and financial records that need to stay organised.',
     context: 'PropertyFy brings property operations into one platform. Teams need a clear view of the wider portfolio while still being able to find the tenant, buyer, invoice, or payment record behind an individual property.',
@@ -180,14 +180,14 @@ const projectDetails = [
     url: '',
   },
   {
-    slug: '3d-trailer-builder', name: '3D Trailer Builder', category: 'Interactive 3D configurator', number: '11', theme: 'trailer',
+    slug: '3d-trailer-builder', projectTypes: ['3d'], name: '3D Trailer Builder', category: 'Interactive 3D configurator', number: '11', theme: 'trailer',
     summary: 'Configure a food trailer in the browser, explore its 3D exterior, choose equipment, and review the build in one guided experience.',
     problem: 'A list of specifications can describe a trailer without making the finished configuration easy to understand. Buyers need to consider the physical product alongside the decisions that shape the build.',
     context: 'Trailer configuration spans the type of food operation, dimensions, materials, serving windows, equipment, and utilities. The challenge is to organise those choices while keeping the overall product in view.',
-    contribution: 'A visual configuration demo pairing a 3D food trailer with a guided selection flow and a consolidated build summary.',
-    role: 'The experience keeps the trailer visible beside the configuration panel. Users choose a hot or cold trailer, work through the build options, and open a summary to review their selected setup.',
+    contribution: 'Built the complete 3D Trailer Builder from scratch using Next.js, Three.js, Airtable, and Node.js.',
+    role: 'I built 3D Trailer Builder from scratch, delivering the complete application using Next.js, Three.js, Airtable, and Node.js. My work brought the interactive 3D trailer experience, guided configuration, equipment selection, and build summary together in one product.',
     solution: 'A split-screen configurator with a large 3D viewport and a 12-step selection flow, connecting product exploration with structured configuration.',
-    tags: ['3D visualisation', 'Product configuration', 'Equipment selection'],
+    tags: ['Next.js', 'Three.js', 'Airtable', 'Node.js'],
     scope: [
       { title: 'Start with the intended operation', description: 'Choose between hot and cold trailers for different food and concession uses. The selected trailer type is reflected in the persistent configuration summary.' },
       { title: 'Guide the build through clear stages', description: 'The 12-step navigation covers type, jurisdiction, build materials, size, colour, serving windows, layout, equipment confirmation, electrical systems, utilities, extras, and final review.' },
@@ -195,7 +195,7 @@ const projectDetails = [
       { title: 'Bring the configuration into one review', description: 'The summary groups the selected trailer dimensions, frame, flooring, serving window, equipment, electrical systems, utilities, and additional options.' },
       { title: 'Support revision during configuration', description: 'Undo and redo controls accompany the builder. Key choices remain visible in the bottom summary, with direct access to the full configuration review.' },
     ],
-    outcome: 'The public demo demonstrates a guided visual configuration experience. Switching from cold to hot updates the selected trailer type, and the configuration summary brings the chosen build details together for review.',
+    outcome: 'Delivered the complete browser-based trailer configurator from scratch. The public demo brings hot and cold trailer selection, 3D visualisation, equipment choices, and a consolidated build summary into one guided experience.',
     url: 'https://3d-trailer-demo.askussolution.tech/',
   },
 ];

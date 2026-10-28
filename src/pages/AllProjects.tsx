@@ -1,10 +1,9 @@
 import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Header, Footer } from '@/features/portfolio/Layout';
-import { Work } from '@/features/portfolio/HomeSections';
-import { MoreWork } from '@/features/portfolio/Evidence';
+import { ProjectArchive } from '@/features/portfolio/ProjectArchive';
 import { PageMeta } from '@/features/portfolio/PageMeta';
 
 export default function AllProjects() {
-  return <><PageMeta title="All Projects — Rao Rabi" description="Explore Rao Rabi’s SaaS, mobile, internal tools, and automation projects." path="/projects" /><Header /><main id="main" tabIndex={-1}><section className="section all-projects-intro"><Link className="text-link archive-back" to="/#work"><ArrowLeft size={18} /> Back to selected work</Link><p className="eyebrow">PROJECT ARCHIVE</p><h1>All Projects</h1><p>Featured case studies and additional web, mobile, and AI builds.</p></section><Work showAllProjectsLink={false} /><MoreWork /></main><Footer /></>;
+  return <><PageMeta title="All Projects — Rao Rabi" description="Explore Rao Rabi’s web, mobile app, AI automation, and 3D projects." path="/projects" /><Header /><main id="main" tabIndex={-1}><section className="section all-projects-intro"><Link className="text-link archive-back" to="/#work"><ArrowLeft size={18} /> Back to selected work</Link><p className="eyebrow">PROJECT ARCHIVE</p><h1>All Projects</h1><p>Explore web products, mobile apps, AI automation, and interactive 3D experiences.</p></section><ProjectArchive /></main><Footer /></>;
 }

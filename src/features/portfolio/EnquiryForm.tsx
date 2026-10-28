@@ -5,8 +5,11 @@ import { emptyEnquiry, enquirySchema, submitEnquiry } from './enquiry';
 import type { Enquiry } from './enquiry';
 
 type Errors = Partial<Record<keyof Enquiry, string>>;
-export function EnquiryForm() {
-  const [form, setForm] = useState({ ...emptyEnquiry });
+export function EnquiryForm({ projectName }: { projectName?: string }) {
+  const [form, setForm] = useState(() => ({
+    ...emptyEnquiry,
+    details: projectName ? `I’m interested in something like ${projectName}.\n\n` : '',
+  }));
   const [errors, setErrors] = useState<Errors>({});
   const [state, setState] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
   const [message, setMessage] = useState('');
@@ -49,6 +52,7 @@ export function EnquiryForm() {
   return (
     <form ref={formRef} className="enquiry-form" onSubmit={handleSubmit} noValidate aria-label="Project enquiry" aria-busy={state === 'sending'}>
       <h3>Tell me about your project</h3>
+      {projectName && <p className="enquiry-context">Inspired by {projectName}? Edit the message below to tell me what you need.</p>}
       <fieldset disabled={state === 'sending'}>
         <div className="form-pair">
           <label htmlFor="enquiry-name">Name<input {...fieldProps('name')} autoComplete="name" required maxLength={100} />{errors.name && <span id="name-error" className="field-error">{errors.name}</span>}</label>

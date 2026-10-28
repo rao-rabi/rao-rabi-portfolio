@@ -3,7 +3,7 @@ import { ArrowUpRight, Copy } from 'lucide-react';
 import { profile } from '@/data/portfolio';
 import { EnquiryForm } from './EnquiryForm';
 
-export function Contact() {
+export function Contact({ projectName }: { projectName?: string }) {
   const [status, setStatus] = useState('');
   async function copyEmail() {
     try { await navigator.clipboard.writeText(profile.email); setStatus('Email address copied.'); }
@@ -22,7 +22,7 @@ export function Contact() {
           <p className="copy-status" role="status">{status}</p>
           <div className="contact-socials"><a href="https://www.linkedin.com/in/rao-rabi/" target="_blank" rel="noreferrer">LinkedIn<ArrowUpRight size={14} /></a><a href={`tel:${profile.phone.replace(/[^+0-9]/g, '')}`}>{profile.phone}</a></div>
         </div>
-        <EnquiryForm />
+        <EnquiryForm projectName={projectName} />
       </div>
     </section>
   );

@@ -6,6 +6,7 @@
 @import './styles/refinements.css';
 @import './styles/case-study.css';
 @import './styles/credibility.css';
+@import './styles/project-archive.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
