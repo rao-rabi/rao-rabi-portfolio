@@ -179,6 +179,25 @@ const projectDetails = [
     outcome: 'A connected workspace for property operations: from reviewing rental and sales activity to finding tenant details or checking an invoice and its payment history. Portfolio visibility and operational records are brought together in the same system.',
     url: '',
   },
+  {
+    slug: '3d-trailer-builder', name: '3D Trailer Builder', category: 'Interactive 3D configurator', number: '11', theme: 'trailer',
+    summary: 'Configure a food trailer in the browser, explore its 3D exterior, choose equipment, and review the build in one guided experience.',
+    problem: 'A list of specifications can describe a trailer without making the finished configuration easy to understand. Buyers need to consider the physical product alongside the decisions that shape the build.',
+    context: 'Trailer configuration spans the type of food operation, dimensions, materials, serving windows, equipment, and utilities. The challenge is to organise those choices while keeping the overall product in view.',
+    contribution: 'A visual configuration demo pairing a 3D food trailer with a guided selection flow and a consolidated build summary.',
+    role: 'The experience keeps the trailer visible beside the configuration panel. Users choose a hot or cold trailer, work through the build options, and open a summary to review their selected setup.',
+    solution: 'A split-screen configurator with a large 3D viewport and a 12-step selection flow, connecting product exploration with structured configuration.',
+    tags: ['3D visualisation', 'Product configuration', 'Equipment selection'],
+    scope: [
+      { title: 'Start with the intended operation', description: 'Choose between hot and cold trailers for different food and concession uses. The selected trailer type is reflected in the persistent configuration summary.' },
+      { title: 'Guide the build through clear stages', description: 'The 12-step navigation covers type, jurisdiction, build materials, size, colour, serving windows, layout, equipment confirmation, electrical systems, utilities, extras, and final review.' },
+      { title: 'Explore equipment alongside the trailer', description: 'The layout editor presents equipment choices such as refrigerators, freezers, and undercounter units while the 3D trailer remains visible.' },
+      { title: 'Bring the configuration into one review', description: 'The summary groups the selected trailer dimensions, frame, flooring, serving window, equipment, electrical systems, utilities, and additional options.' },
+      { title: 'Support revision during configuration', description: 'Undo and redo controls accompany the builder. Key choices remain visible in the bottom summary, with direct access to the full configuration review.' },
+    ],
+    outcome: 'The public demo demonstrates a guided visual configuration experience. Switching from cold to hot updates the selected trailer type, and the configuration summary brings the chosen build details together for review.',
+    url: 'https://3d-trailer-demo.askussolution.tech/',
+  },
 ];
 
 const featuredOrder = ['upthyme', 'rapidships', 'athlo', 'dental-clinic'];

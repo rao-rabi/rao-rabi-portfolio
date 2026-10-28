@@ -1,3 +1,4 @@
+import trailerImage from '@/assets/3d-trailer-builder.webp';
 import upthymeImage from '@/assets/upthyme-product.webp';
 import athloImage from '@/assets/athlo.webp';
 import grammarImage from '@/assets/grammar-guru.webp';
@@ -10,6 +11,7 @@ import parchiImage from '@/assets/parchi.webp';
 import propertyImage from '@/assets/propertyfy.webp';
 
 const projectImages: Record<string, { name: string; src: string; alt: string }> = {
+  trailer: { name: '3D Trailer Builder', src: trailerImage, alt: '3D Trailer Builder promotional cover showing a food trailer configurator' },
   dark: { name: 'RapidShips', src: rapidImage, alt: 'RapidShips quote, work-order and invoicing workflow illustration' },
   cream: { name: 'Dental Clinic', src: dentalImage, alt: 'Dental Clinic call, chat and calendar booking illustration' },
   retail: { name: 'Digital Parchi', src: parchiImage, alt: 'Digital Parchi mobile retail billing and inventory illustration' },

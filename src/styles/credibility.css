@@ -12,3 +12,4 @@
 .tags span{font-size:12px;color:#40564c}.case-sidebar nav a{font-size:16px}.workflow-type{font-size:12px}.automation-feature .workflow-heading>span{font-size:12px}.recommendations small{font-size:13px}.case-body .case-nav-number{font-size:12px}
 @media(max-width:800px){.case-sidebar nav a{font-size:14px}}
 .project-actions{display:flex;flex-wrap:wrap;align-items:center;gap:16px 26px;margin-top:24px}.project-live-link{border-bottom:1px solid #7ca89a;padding-bottom:3px}.case-live-action:has(a){margin-top:22px}.case-live-action .project-live-link{font-size:16px}
+.trailer-screenshots{display:grid;gap:28px}.trailer-screenshots figure{margin:0}.trailer-screenshots a{display:block;border:1px solid var(--line);border-radius:10px;overflow:hidden}.trailer-screenshots img{display:block;width:100%;height:auto}.trailer-screenshots figcaption{font-size:15px;line-height:1.6;color:#45564f;margin-top:10px}

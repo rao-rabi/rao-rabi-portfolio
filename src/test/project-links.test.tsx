@@ -11,7 +11,7 @@ it.each(allProjects.filter(project => project.url))('links $name to its configur
   expect(link).toHaveAttribute('href', project.url);
   expect(link).toHaveAttribute('target', '_blank');
   expect(link).toHaveAttribute('rel', 'noopener noreferrer');
-  expect(link).toHaveTextContent(project.slug === 'rapidships' ? 'Agency case study' : project.slug === 'athlo' ? 'View on App Store' : 'Visit live project');
+  expect(link).toHaveTextContent(project.slug === '3d-trailer-builder' ? 'Explore live demo' : project.slug === 'rapidships' ? 'Agency case study' : project.slug === 'athlo' ? 'View on App Store' : 'Visit live project');
 });
 
 it('does not invent a destination for a project with no public URL', () => {

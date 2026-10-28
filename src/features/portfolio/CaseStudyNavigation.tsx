@@ -17,15 +17,17 @@ export const automationSections: Section[] = [
   { id: 'ai-automation', label: 'AI & automation' },
   productSections[5],
 ];
+const demoSections = productSections.map(section => ({ ...section, label: ({ role: 'Product experience', tools: 'Capabilities', screenshots: 'Screenshots', results: 'Demonstrated outcome' } as Record<string, string>)[section.id] ?? section.label }));
+const demoIds = demoSections.map(section => section.id);
 const productIds = productSections.map(section => section.id);
 const automationIds = automationSections.map(section => section.id);
 
-export function CaseStudyNavigation({ automation, url, agency, contribution }: {
-  automation: boolean; url: string; agency: boolean; contribution: string;
+export function CaseStudyNavigation({ automation, demo = false, url, agency, contribution }: {
+  automation: boolean; demo?: boolean; url: string; agency: boolean; contribution: string;
 }) {
   const navRef = useRef<HTMLElement>(null);
-  const sections = automation ? automationSections : productSections;
-  const activeId = useActiveSection(automation ? automationIds : productIds);
+  const sections = demo ? demoSections : automation ? automationSections : productSections;
+  const activeId = useActiveSection(demo ? demoIds : automation ? automationIds : productIds);
   useEffect(() => {
     const nav = navRef.current;
     const link = nav?.querySelector<HTMLElement>('[aria-current="location"]');
@@ -44,8 +46,8 @@ export function CaseStudyNavigation({ automation, url, agency, contribution }: {
           </a>
         ))}
       </nav>
-      <div className="case-sidebar-summary"><span className="eyebrow">MY DELIVERY</span><p>{contribution}</p></div>
-      {url && <a className="text-link case-product-link" href={url} target="_blank" rel="noreferrer">{agency ? 'Agency case study' : url.startsWith('https://apps.apple.com/') ? 'View on App Store' : 'Visit product'}<ArrowUpRight size={17} /></a>}
+      <div className="case-sidebar-summary"><span className="eyebrow">{demo ? 'THE EXPERIENCE' : 'MY DELIVERY'}</span><p>{contribution}</p></div>
+      {url && <a className="text-link case-product-link" href={url} target="_blank" rel="noreferrer">{demo ? 'Explore live demo' : agency ? 'Agency case study' : url.startsWith('https://apps.apple.com/') ? 'View on App Store' : 'Visit product'}<ArrowUpRight size={17} /></a>}
       <a className="button primary case-enquiry" href="#contact">Discuss your project<ArrowUpRight size={17} /></a>
     </aside>
   );
