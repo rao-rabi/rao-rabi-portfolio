@@ -32,29 +32,13 @@ it('closes the mobile navigation after choosing a section', () => {
     fireEvent.click(screen.getByRole('link', { name: 'Work' }));
     expect(screen.getByRole('button', { name: 'Open navigation' })).toHaveAttribute('aria-expanded', 'false');
 });
-it('keeps RapidShips agency scope distinct from personal contribution', () => {
-    vi.spyOn(window, 'scrollTo').mockImplementation(() => { });
-    render(<MemoryRouter initialEntries={['/work/rapidships']}><Routes><Route path="/work/:slug" element={<CaseStudy />}/></Routes></MemoryRouter>);
-    expect(screen.getByText(/Wider agency scope and outcomes are not attributed/)).toBeInTheDocument();
-    expect(screen.getByText(/I built the automation for RapidShips using n8n/)).toBeInTheDocument();
-});
-
-it('shows the confirmed UpThyme modules and delivered outcome', () => {
+it('routes visible case-study contact links to its prefilled form', () => {
     vi.spyOn(window, 'scrollTo').mockImplementation(() => {});
-    render(<MemoryRouter initialEntries={['/work/upthyme']}><Routes><Route path="/work/:slug" element={<CaseStudy />}/></Routes></MemoryRouter>);
-    expect(screen.getByText(/I developed UpThyme from scratch/)).toBeInTheDocument();
-    expect(screen.getByText(/Developed the payroll system and WhatsApp-style team chat/)).toBeInTheDocument();
-    expect(screen.getByRole('heading', { name: 'The delivered outcome' })).toBeInTheDocument();
-});
-
-it('shows confirmed trailer ownership and routes case-study contact links to its prefilled form', () => {
-    vi.spyOn(window, 'scrollTo').mockImplementation(() => {});
-    render(<MemoryRouter initialEntries={['/work/3d-trailer-builder']}><Routes><Route path="/work/:slug" element={<CaseStudy />}/></Routes></MemoryRouter>);
-    expect(screen.getByText(/I built 3D Trailer Builder from scratch/)).toHaveTextContent('Next.js, Three.js, Airtable, and Node.js');
+    render(<MemoryRouter initialEntries={['/work/propertyfy']}><Routes><Route path="/work/:slug" element={<CaseStudy />}/></Routes></MemoryRouter>);
     expect(screen.getByRole('heading', { name: 'My role' })).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: 'Tools & technology' })).toBeInTheDocument();
     const details = screen.getByLabelText('Project details');
-    expect(details).toHaveValue('I’m interested in something like 3D Trailer Builder.\n\n');
+    expect(details).toHaveValue('I’m interested in something like PropertyFy.\n\n');
     fireEvent.change(details, { target: { value: 'I need a configurator for custom furniture.' } });
     for (const link of screen.getAllByRole('link', { name: 'Discuss your project' })) {
         expect(link).toHaveAttribute('href', '#contact');
@@ -69,7 +53,6 @@ it.each([
     ['grammar-guru', 'Grammar Guru'],
     ['decoded-skin', 'Decoded Skin'],
     ['talkative-buddy', 'Talkative Buddy'],
-    ['maardhcum', 'Maardhcum'],
 ])('opens the %s case study with its own image and delivery content', (slug, name) => {
     vi.spyOn(window, 'scrollTo').mockImplementation(() => {});
     render(<MemoryRouter initialEntries={[`/work/${slug}`]}><Routes><Route path="/work/:slug" element={<CaseStudy />}/></Routes></MemoryRouter>);
@@ -81,9 +64,9 @@ it.each([
     expect(screen.getByRole('navigation', { name: 'Case study sections' })).toBeInTheDocument();
 });
 
-it('keeps the hero focused on UpThyme and identifies concept imagery', () => {
+it('keeps the hero focused on PropertyFy and identifies concept imagery', () => {
     render(<Hero />);
-    expect(screen.getByLabelText('My UpThyme contribution')).toHaveTextContent('Built from scratch.');
+    expect(screen.getByLabelText('My PropertyFy contribution')).toHaveTextContent('A connected workspace.');
     expect(screen.queryByText(/Dental clinic/i)).not.toBeInTheDocument();
     expect(screen.getByText(/concept cover, not a production screenshot/)).toBeInTheDocument();
 });

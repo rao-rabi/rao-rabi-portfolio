@@ -202,6 +202,9 @@ const projectDetails = [
 
 const featuredOrder = ['upthyme', 'rapidships', 'athlo', 'dental-clinic'];
 export const allProjects = projectDetails;
-export const selectedProjects = projectDetails.filter(project => featuredOrder.includes(project.slug)).sort((left, right) =>
-  featuredOrder.indexOf(left.slug) - featuredOrder.indexOf(right.slug)
-);
+export const hiddenProjectSlugs = ['upthyme', '3d-trailer-builder', 'athlo', 'maardhcum', 'rapidships'];
+export const visibleProjects = allProjects.filter(project => !hiddenProjectSlugs.includes(project.slug));
+const visibleFeaturedOrder = [...featuredOrder, 'propertyfy', 'digital-parchi', 'grammar-guru'];
+export const selectedProjects = visibleProjects.filter(project => visibleFeaturedOrder.includes(project.slug)).sort((left, right) =>
+  visibleFeaturedOrder.indexOf(left.slug) - visibleFeaturedOrder.indexOf(right.slug)
+).slice(0, 4);

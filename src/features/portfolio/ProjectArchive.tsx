@@ -1,7 +1,7 @@
 import * as Tabs from '@radix-ui/react-tabs';
 import { ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { allProjects } from './projects';
+import { visibleProjects } from './projects';
 import { ProjectExternalLink } from './ProjectExternalLink';
 import { ProjectVisual } from './ProjectVisual';
 
@@ -14,10 +14,10 @@ const categories = [
 ];
 
 function projectsFor(category: string) {
-  return allProjects.filter(project => category === 'all' || project.projectTypes.includes(category));
+  return visibleProjects.filter(project => category === 'all' || project.projectTypes.includes(category));
 }
 
-function ArchiveCard({ project }: { project: (typeof allProjects)[number] }) {
+function ArchiveCard({ project }: { project: (typeof visibleProjects)[number] }) {
   const path = `/work/${project.slug}`;
   return (
     <article className="project">
@@ -52,6 +52,7 @@ export function ProjectArchive() {
         return (
           <Tabs.Content key={id} value={id} className="project-results">
             <p className="project-results-summary">{id === 'all' ? 'All projects' : label} <span> / {projects.length} {projects.length === 1 ? 'project' : 'projects'}</span></p>
+            {projects.length === 0 && <p className="project-empty">No projects are currently published in this category. Explore the other tabs to see more work.</p>}
             <div className="project-list">
               {projects.map(project => <ArchiveCard key={project.slug} project={project} />)}
             </div>

@@ -1,6 +1,6 @@
 import { ArrowRight, Check } from 'lucide-react';
 import profileImage from '@/assets/profile.webp';
-import productScreenshot from '@/assets/upthyme-product.webp';
+import productScreenshot from '@/assets/propertyfy.webp';
 
 export function Hero() {
   return (
@@ -30,16 +30,16 @@ function HeroShowcase() {
   return (
     <div className="hero-showcase">
       <figure className="hero-product">
-        <div className="browser-bar"><span aria-hidden="true"><i /><i /><i /></span><span>UpThyme / Workforce SaaS</span></div>
-        <img src={productScreenshot} alt="Concept cover illustrating UpThyme scheduling and payroll" />
-        <figcaption>UpThyme · concept cover, not a production screenshot</figcaption>
+        <div className="browser-bar"><span aria-hidden="true"><i /><i /><i /></span><span>PropertyFy / Property management</span></div>
+        <img src={productScreenshot} alt="Concept cover illustrating PropertyFy property management" />
+        <figcaption>PropertyFy · concept cover, not a production screenshot</figcaption>
       </figure>
-      <aside className="hero-workflow hero-delivery" aria-label="My UpThyme contribution">
-        <p className="eyebrow">MY UPTHYME DELIVERY</p>
-        <h2>Built from scratch.</h2>
-        <p>Next.js + Django</p>
-        <ul>{['Scheduling & timesheets', 'Payroll & people records', 'Tasks & team chat'].map(item => <li key={item}><Check size={16} aria-hidden="true" />{item}</li>)}</ul>
-        <a className="text-link" href="/work/upthyme">Explore UpThyme <ArrowRight size={16} /></a>
+      <aside className="hero-workflow hero-delivery" aria-label="My PropertyFy contribution">
+        <p className="eyebrow">PROPERTY OPERATIONS</p>
+        <h2>A connected workspace.</h2>
+        <p>Dashboards, records & finances</p>
+        <ul>{['Rental & sales dashboards', 'Tenant & buyer records', 'Invoices & payments'].map(item => <li key={item}><Check size={16} aria-hidden="true" />{item}</li>)}</ul>
+        <a className="text-link" href="/work/propertyfy">Explore PropertyFy <ArrowRight size={16} /></a>
       </aside>
     </div>
   );

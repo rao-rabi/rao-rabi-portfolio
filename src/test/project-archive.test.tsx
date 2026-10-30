@@ -2,7 +2,7 @@ import { act, cleanup, fireEvent, render, screen, waitFor } from '@testing-libra
 import { afterEach, describe, expect, it } from 'vitest';
 import { MemoryRouter } from 'react-router-dom';
 import { ProjectArchive } from '@/features/portfolio/ProjectArchive';
-import { allProjects } from '@/features/portfolio/projects';
+import { visibleProjects } from '@/features/portfolio/projects';
 
 afterEach(cleanup);
 
@@ -17,20 +17,19 @@ function chooseTab(name: RegExp) {
 describe('Project archive categories', () => {
   it('shows every project once and gives every project a supported category', () => {
     renderArchive();
-    expect(screen.getAllByRole('article')).toHaveLength(allProjects.length);
+    expect(screen.getAllByRole('article')).toHaveLength(visibleProjects.length);
     const projectNames = screen.getAllByRole('heading', { level: 2 }).map(heading => heading.textContent);
-    expect(projectNames).toEqual(allProjects.map(project => project.name));
-    for (const project of allProjects) {
+    expect(projectNames).toEqual(visibleProjects.map(project => project.name));
+    for (const project of visibleProjects) {
       expect(project.projectTypes.length).toBeGreaterThan(0);
       expect(project.projectTypes.every(type => ['web', 'app', 'ai', '3d'].includes(type))).toBe(true);
     }
   });
 
   it.each([
-    [/^Web/, ['UpThyme', 'Maardhcum', 'Decoded Skin', 'PropertyFy']],
-    [/^Mobile Apps/, ['Athlo', 'Maardhcum', 'Digital Parchi']],
-    [/^AI Automation/, ['RapidShips', 'Dental Clinic', 'Talkative Buddy', 'Grammar Guru']],
-    [/^3D/, ['3D Trailer Builder']],
+    [/^Web/, ['Decoded Skin', 'PropertyFy']],
+    [/^Mobile Apps/, ['Digital Parchi']],
+    [/^AI Automation/, ['Dental Clinic', 'Talkative Buddy', 'Grammar Guru']],
   ] as const)('shows only matching projects for %s', (tab, names) => {
     renderArchive();
     chooseTab(tab);
@@ -42,10 +41,10 @@ describe('Project archive categories', () => {
 
   it('restores all projects after filtering and retains case-study links', () => {
     renderArchive();
-    chooseTab(/^3D/);
-    expect(screen.getByRole('link', { name: /View case study/ })).toHaveAttribute('href', '/work/3d-trailer-builder');
+    chooseTab(/^Mobile Apps/);
+    expect(screen.getByRole('link', { name: /View case study/ })).toHaveAttribute('href', '/work/digital-parchi');
     chooseTab(/^All/);
-    expect(screen.getAllByRole('article')).toHaveLength(allProjects.length);
+    expect(screen.getAllByRole('article')).toHaveLength(visibleProjects.length);
   });
 
   it('supports arrow keys and wraps keyboard focus between tabs', async () => {

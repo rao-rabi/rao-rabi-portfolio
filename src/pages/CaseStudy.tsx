@@ -1,6 +1,6 @@
 import { TrailerScreenshots } from '@/features/portfolio/TrailerScreenshots';
 import { useParams } from 'react-router-dom';
-import { allProjects } from '@/features/portfolio/projects';
+import { visibleProjects } from '@/features/portfolio/projects';
 import { Header, Footer } from '@/features/portfolio/Layout';
 import { ProjectVisual } from '@/features/portfolio/ProjectVisual';
 import { Contact } from '@/features/portfolio/Contact';
@@ -13,7 +13,7 @@ import { DeliveryWalkthrough } from '@/features/portfolio/DeliveryWalkthrough';
 
 export default function CaseStudy() {
   const { slug } = useParams();
-  const project = allProjects.find(item => item.slug === slug);
+  const project = visibleProjects.find(item => item.slug === slug);
   if (!project) return <NotFound />;
   const demo = project.slug === '3d-trailer-builder';
   const automation = ['rapidships', 'dental-clinic'].includes(project.slug);

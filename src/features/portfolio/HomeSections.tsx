@@ -30,9 +30,9 @@ export function Work({ showAllProjectsLink = true }: { showAllProjectsLink?: boo
   );
 }
 const services = [
-  [Layers, 'SaaS & Product Development', 'You need to turn an idea into a usable product, or move an existing platform forward.', 'A scoped SaaS MVP or product release, with web and React Native mobile development and backend APIs as needed.', '/work/upthyme', 'Explore a SaaS build'],
+  [Layers, 'SaaS & Product Development', 'You need to turn an idea into a usable product, or move an existing platform forward.', 'A scoped SaaS MVP or product release, with web and React Native mobile development and backend APIs as needed.', '/work/digital-parchi', 'Explore a mobile product'],
   [Code2, 'Internal Tools', 'Your team works around disconnected systems, spreadsheets, or awkward manual processes.', 'Purpose-built dashboards and internal tools that bring the relevant data and operations into one usable interface.', '/work/propertyfy', 'Explore an operations platform'],
-  [Workflow, 'AI Automation', 'Repeated handoffs and data entry slow down the work your team needs to do.', 'Connected workflows and integrations, with AI for suitable language tasks and standard automation for predictable actions.', '/work/rapidships', 'Explore a connected workflow'],
+  [Workflow, 'AI Automation', 'Repeated handoffs and data entry slow down the work your team needs to do.', 'Connected workflows and integrations, with AI for suitable language tasks and standard automation for predictable actions.', '/work/dental-clinic', 'Explore a booking workflow'],
 ] as const;
 export function Services() {
   return <section id="services" className="section"><SectionHeading number="02" label="SERVICES" title="Software built for the job." /><div className="services-grid">{services.map(([Icon,title,problem,deliverable,url,label])=><article key={title}><Icon size={27} /><h3>{title}</h3><p>{problem}</p><p><strong>What you get</strong> {deliverable}</p><Link className="text-link" to={url}>{label} <ArrowUpRight size={17} /></Link></article>)}</div></section>;
