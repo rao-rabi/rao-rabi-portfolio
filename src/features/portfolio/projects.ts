@@ -202,7 +202,7 @@ const projectDetails = [
 
 const featuredOrder = ['upthyme', 'rapidships', 'athlo', 'dental-clinic'];
 export const allProjects = projectDetails;
-export const hiddenProjectSlugs = ['upthyme', '3d-trailer-builder', 'athlo', 'maardhcum', 'rapidships'];
+export const hiddenProjectSlugs = ['3d-trailer-builder'];
 export const visibleProjects = allProjects.filter(project => !hiddenProjectSlugs.includes(project.slug));
 const visibleFeaturedOrder = [...featuredOrder, 'propertyfy', 'digital-parchi', 'grammar-guru'];
 export const selectedProjects = visibleProjects.filter(project => visibleFeaturedOrder.includes(project.slug)).sort((left, right) =>

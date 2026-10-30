@@ -27,9 +27,9 @@ describe('Project archive categories', () => {
   });
 
   it.each([
-    [/^Web/, ['Decoded Skin', 'PropertyFy']],
-    [/^Mobile Apps/, ['Digital Parchi']],
-    [/^AI Automation/, ['Dental Clinic', 'Talkative Buddy', 'Grammar Guru']],
+    [/^Web/, ['UpThyme', 'Maardhcum', 'Decoded Skin', 'PropertyFy']],
+    [/^Mobile Apps/, ['Athlo', 'Maardhcum', 'Digital Parchi']],
+    [/^AI Automation/, ['RapidShips', 'Dental Clinic', 'Talkative Buddy', 'Grammar Guru']],
   ] as const)('shows only matching projects for %s', (tab, names) => {
     renderArchive();
     chooseTab(tab);
@@ -42,7 +42,7 @@ describe('Project archive categories', () => {
   it('restores all projects after filtering and retains case-study links', () => {
     renderArchive();
     chooseTab(/^Mobile Apps/);
-    expect(screen.getByRole('link', { name: /View case study/ })).toHaveAttribute('href', '/work/digital-parchi');
+    expect(screen.getByRole('link', { name: 'Explore Digital Parchi' })).toHaveAttribute('href', '/work/digital-parchi');
     chooseTab(/^All/);
     expect(screen.getAllByRole('article')).toHaveLength(visibleProjects.length);
   });
