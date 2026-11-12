@@ -9,6 +9,8 @@ import rapidImage from '@/assets/rapid.webp';
 import dentalImage from '@/assets/dental.webp';
 import parchiImage from '@/assets/parchi.webp';
 import propertyImage from '@/assets/propertyfy.webp';
+import transloomImage from '@/assets/transloom.webp';
+import donewiseImage from '@/assets/donewise.webp';
 import { GeneratedProjectVisual } from './GeneratedProjectVisual';
 
 const projectImages: Record<string, { name: string; src: string; alt: string }> = {
@@ -23,9 +25,11 @@ const projectImages: Record<string, { name: string; src: string; alt: string }> 
   skincare: { name: 'Decoded Skin', src: decodedImage, alt: 'Decoded Skin website and mobile product visual' },
   buddy: { name: 'Talkative Buddy', src: buddyImage, alt: 'Talkative Buddy website assistant product visual' },
   marketplace: { name: 'Maardhcum', src: maardhcumImage, alt: 'Maardhcum automotive marketplace product visual' },
+  transloom: { name: 'TransLoom', src: transloomImage, alt: 'TransLoom product page showing its i18n workflow and dashboard' },
+  donewise: { name: 'Donewise', src: donewiseImage, alt: 'Donewise dashboard, work timeline, and AI question screens' },
 };
 export function ProjectVisual({ kind, thumbnail = false }: { kind: string; thumbnail?: boolean }) {
-  if (kind === 'transloom' || kind === 'harmony' || kind === 'donewise') return <GeneratedProjectVisual kind={kind} thumbnail={thumbnail} />;
+  if (kind === 'harmony') return <GeneratedProjectVisual kind="harmony" thumbnail={thumbnail} />;
   const image = projectImages[kind];
   if (!image) return null;
   return (

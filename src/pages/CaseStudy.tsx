@@ -10,6 +10,7 @@ import { CaseStudyNavigation } from '@/features/portfolio/CaseStudyNavigation';
 import { AutomationVisual } from '@/features/portfolio/AutomationVisual';
 import NotFound from './NotFound';
 import { DeliveryWalkthrough } from '@/features/portfolio/DeliveryWalkthrough';
+import { DonewiseScreenshots } from '@/features/portfolio/DonewiseScreenshots';
 
 export default function CaseStudy() {
   const { slug } = useParams();
@@ -33,7 +34,7 @@ export default function CaseStudy() {
               <DeliveryWalkthrough slug={project.slug} />
             </section>
             <section id="tools"><h2>Tools & technology</h2><div className="tags">{project.tags.map(tag => <span key={tag}>{tag}</span>)}</div></section>
-            <section id="screenshots" className="case-imagery"><h2>{demo ? 'Product screenshots' : automation ? 'Workflow in focus' : 'Project visual'}</h2>{demo ? <TrailerScreenshots /> : <ProjectVisual kind={project.theme} />}{automation && <><h3>How the workflow connects</h3><AutomationVisual clinic={slug === 'dental-clinic'} /></>}</section>
+            <section id="screenshots" className="case-imagery"><h2>{demo || slug === 'donewise' ? 'Product screenshots' : automation ? 'Workflow in focus' : 'Project visual'}</h2>{demo ? <TrailerScreenshots /> : slug === 'donewise' ? <DonewiseScreenshots /> : <ProjectVisual kind={project.theme} />}{automation && <><h3>How the workflow connects</h3><AutomationVisual clinic={slug === 'dental-clinic'} /></>}</section>
             {automation && <section id="ai-automation"><h2>AI and standard automation</h2><p>{slug === 'dental-clinic' ? 'AI attends calls and replies to customer messages. n8n orchestrates standard automation for Google Calendar booking and WhatsApp notifications to both parties. The specific AI provider and model are not claimed.' : 'Record updates, work-order handoffs, and invoice creation are standard automation steps. The project includes AI automation, but the specific AI task and model have not yet been confirmed.'}</p></section>}
             <section id="results" className="case-outcome"><h2>The delivered outcome</h2><p>{project.outcome}</p></section>
             {slug === 'rapidships' && <p className="source-note">Source: <a href={project.url} target="_blank" rel="noreferrer">Apex Arabia’s RapidShips case study</a>. Wider agency scope and outcomes are not attributed to Rao Rabi.</p>}
