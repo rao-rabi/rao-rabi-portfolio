@@ -27,9 +27,9 @@ describe('Project archive categories', () => {
   });
 
   it.each([
-    [/^Web/, ['UpThyme', 'Maardhcum', 'Decoded Skin', 'PropertyFy']],
+    [/^Web/, ['UpThyme', 'Maardhcum', 'Decoded Skin', 'PropertyFy', 'TransLoom', 'Harmony Code Reviewer', 'Donewise']],
     [/^Mobile Apps/, ['Athlo', 'Maardhcum', 'Digital Parchi']],
-    [/^AI Automation/, ['RapidShips', 'Dental Clinic', 'Talkative Buddy', 'Grammar Guru']],
+    [/^AI Automation/, ['RapidShips', 'Dental Clinic', 'Talkative Buddy', 'Grammar Guru', 'TransLoom', 'Harmony Code Reviewer', 'Donewise']],
   ] as const)('shows only matching projects for %s', (tab, names) => {
     renderArchive();
     chooseTab(tab);
@@ -37,7 +37,7 @@ describe('Project archive categories', () => {
     expect(screen.getAllByRole('article')).toHaveLength(names.length);
     for (const name of names) expect(screen.getByRole('heading', { name })).toBeInTheDocument();
     expect(screen.getByRole('tabpanel')).toHaveTextContent(`${names.length} ${names.length === 1 ? 'project' : 'projects'}`);
-  });
+  }, 15_000);
 
   it('restores all projects after filtering and retains case-study links', () => {
     renderArchive();

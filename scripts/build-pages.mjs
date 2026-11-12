@@ -2,7 +2,9 @@ import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import ts from 'typescript';
 
 const origin = 'https://rao-rabi-portfolio.vercel.app';
-const source = await readFile('src/features/portfolio/projects.ts', 'utf8');
+const additionalSource = await readFile('src/features/portfolio/additionalProjects.ts', 'utf8');
+const projectSource = await readFile('src/features/portfolio/projects.ts', 'utf8');
+const source = projectSource.replace("import { additionalProjects } from './additionalProjects';", additionalSource.replace('export const additionalProjects', 'const additionalProjects'));
 const compiled = ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.ESNext } }).outputText;
 const { visibleProjects } = await import(`data:text/javascript;base64,${Buffer.from(compiled).toString('base64')}`);
 const template = await readFile('dist/index.html', 'utf8');

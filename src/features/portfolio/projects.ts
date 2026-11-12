@@ -1,3 +1,5 @@
+import { additionalProjects } from './additionalProjects';
+
 const projectDetails = [
   {
     slug: 'upthyme', projectTypes: ['web'], name: 'UpThyme', category: 'Workforce SaaS', number: '01', theme: 'blue',
@@ -201,7 +203,7 @@ const projectDetails = [
 ];
 
 const featuredOrder = ['upthyme', 'rapidships', 'athlo', 'dental-clinic'];
-export const allProjects = projectDetails;
+export const allProjects = [...projectDetails, ...additionalProjects];
 export const hiddenProjectSlugs = ['3d-trailer-builder'];
 export const visibleProjects = allProjects.filter(project => !hiddenProjectSlugs.includes(project.slug));
 const visibleFeaturedOrder = [...featuredOrder, 'propertyfy', 'digital-parchi', 'grammar-guru'];

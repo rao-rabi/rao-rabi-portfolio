@@ -9,6 +9,7 @@ import rapidImage from '@/assets/rapid.webp';
 import dentalImage from '@/assets/dental.webp';
 import parchiImage from '@/assets/parchi.webp';
 import propertyImage from '@/assets/propertyfy.webp';
+import { GeneratedProjectVisual } from './GeneratedProjectVisual';
 
 const projectImages: Record<string, { name: string; src: string; alt: string }> = {
   trailer: { name: '3D Trailer Builder', src: trailerImage, alt: '3D Trailer Builder promotional cover showing a food trailer configurator' },
@@ -24,11 +25,12 @@ const projectImages: Record<string, { name: string; src: string; alt: string }> 
   marketplace: { name: 'Maardhcum', src: maardhcumImage, alt: 'Maardhcum automotive marketplace product visual' },
 };
 export function ProjectVisual({ kind, thumbnail = false }: { kind: string; thumbnail?: boolean }) {
+  if (kind === 'transloom' || kind === 'harmony' || kind === 'donewise') return <GeneratedProjectVisual kind={kind} thumbnail={thumbnail} />;
   const image = projectImages[kind];
   if (!image) return null;
   return (
     <figure className={`project-screenshot${thumbnail ? ' project-thumbnail' : ''} screenshot-${image.name.toLowerCase().replace(/ /g, '-')}`}>
-      <img src={image.src} alt={`${image.alt} — concept illustration`} loading="lazy" />
+      <img src={image.src} alt={image.alt} loading="lazy" />
     </figure>
   );
 }

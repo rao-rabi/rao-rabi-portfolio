@@ -9,8 +9,8 @@ import CaseStudy from '@/pages/CaseStudy';
 afterEach(() => { cleanup(); vi.restoreAllMocks(); });
 
 it('retains all project content while excluding hidden projects from public collections', () => {
-  expect(allProjects).toHaveLength(11);
-  expect(visibleProjects).toHaveLength(10);
+  expect(allProjects).toHaveLength(14);
+  expect(visibleProjects).toHaveLength(13);
   expect(hiddenProjectSlugs).toEqual(['3d-trailer-builder']);
   expect(selectedProjects.map(project => project.slug)).toEqual(['upthyme', 'rapidships', 'athlo', 'dental-clinic']);
   expect(selectedProjects).toHaveLength(4);
