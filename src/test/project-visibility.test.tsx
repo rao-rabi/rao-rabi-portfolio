@@ -8,10 +8,11 @@ import CaseStudy from '@/pages/CaseStudy';
 
 afterEach(() => { cleanup(); vi.restoreAllMocks(); });
 
-it('retains all project content while excluding hidden projects from public collections', () => {
+it('shows all project content publicly while keeping featured work curated', () => {
   expect(allProjects).toHaveLength(14);
-  expect(visibleProjects).toHaveLength(13);
-  expect(hiddenProjectSlugs).toEqual(['3d-trailer-builder']);
+  expect(visibleProjects).toHaveLength(14);
+  expect(hiddenProjectSlugs).toEqual([]);
+  expect(visibleProjects.some(project => project.slug === '3d-trailer-builder')).toBe(true);
   expect(selectedProjects.map(project => project.slug)).toEqual(['upthyme', 'rapidships', 'athlo', 'dental-clinic']);
   expect(selectedProjects).toHaveLength(4);
   for (const slug of hiddenProjectSlugs) {
@@ -40,7 +41,7 @@ it.each(hiddenProjectSlugs)('does not expose the hidden %s case study by direct 
 });
 
 
-it.each(['upthyme', 'athlo', 'maardhcum', 'rapidships'])('restores the %s case study', slug => {
+it.each(['upthyme', 'athlo', 'maardhcum', 'rapidships', '3d-trailer-builder'])('restores the %s case study', slug => {
   vi.spyOn(window, 'scrollTo').mockImplementation(() => {});
   render(<MemoryRouter initialEntries={[`/work/${slug}`]}><Routes><Route path="/work/:slug" element={<CaseStudy />} /></Routes></MemoryRouter>);
   expect(screen.getByRole('heading', { level: 1, name: allProjects.find(project => project.slug === slug)!.name })).toBeInTheDocument();

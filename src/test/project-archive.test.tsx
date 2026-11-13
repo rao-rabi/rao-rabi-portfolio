@@ -30,6 +30,7 @@ describe('Project archive categories', () => {
     [/^Web/, ['UpThyme', 'Maardhcum', 'Decoded Skin', 'PropertyFy', 'TransLoom', 'Harmony Code Reviewer', 'Donewise']],
     [/^Mobile Apps/, ['Athlo', 'Maardhcum', 'Digital Parchi']],
     [/^AI Automation/, ['RapidShips', 'Dental Clinic', 'Talkative Buddy', 'Grammar Guru', 'TransLoom', 'Harmony Code Reviewer', 'Donewise']],
+    [/^3D/, ['3D Trailer Builder']],
   ] as const)('shows only matching projects for %s', (tab, names) => {
     renderArchive();
     chooseTab(tab);
