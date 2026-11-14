@@ -1,6 +1,3 @@
-import trailerImage from '@/assets/3d-trailer-builder.webp';
-import upthymeImage from '@/assets/upthyme-product.webp';
-import athloImage from '@/assets/athlo.webp';
 import grammarImage from '@/assets/grammar-guru.webp';
 import decodedImage from '@/assets/decoded-skin.webp';
 import buddyImage from '@/assets/talkative-buddy.webp';
@@ -14,13 +11,10 @@ import donewiseImage from '@/assets/donewise.webp';
 import { GeneratedProjectVisual } from './GeneratedProjectVisual';
 
 const projectImages: Record<string, { name: string; src: string; alt: string }> = {
-  trailer: { name: '3D Trailer Builder', src: trailerImage, alt: '3D Trailer Builder promotional cover showing a food trailer configurator' },
   dark: { name: 'RapidShips', src: rapidImage, alt: 'RapidShips quote, work-order and invoicing workflow illustration' },
   cream: { name: 'Dental Clinic', src: dentalImage, alt: 'Dental Clinic call, chat and calendar booking illustration' },
   retail: { name: 'Digital Parchi', src: parchiImage, alt: 'Digital Parchi mobile retail billing and inventory illustration' },
   property: { name: 'PropertyFy', src: propertyImage, alt: 'PropertyFy portfolio, tenant and financial management concept interface' },
-  blue: { name: 'UpThyme', src: upthymeImage, alt: 'UpThyme scheduling and payroll product visual' },
-  mobile: { name: 'Athlo', src: athloImage, alt: 'Updated Athlo mobile sports app product visual' },
   grammar: { name: 'Grammar Guru', src: grammarImage, alt: 'Grammar Guru writing tool product visual' },
   skincare: { name: 'Decoded Skin', src: decodedImage, alt: 'Decoded Skin website and mobile product visual' },
   buddy: { name: 'Talkative Buddy', src: buddyImage, alt: 'Talkative Buddy website assistant product visual' },
@@ -29,7 +23,7 @@ const projectImages: Record<string, { name: string; src: string; alt: string }> 
   donewise: { name: 'Donewise', src: donewiseImage, alt: 'Donewise dashboard, work timeline, and AI question screens' },
 };
 export function ProjectVisual({ kind, thumbnail = false }: { kind: string; thumbnail?: boolean }) {
-  if (kind === 'harmony') return <GeneratedProjectVisual kind="harmony" thumbnail={thumbnail} />;
+  if (['workforce', 'sports', 'configurator', 'harmony'].includes(kind)) return <GeneratedProjectVisual kind={kind as 'workforce' | 'sports' | 'configurator' | 'harmony'} thumbnail={thumbnail} />;
   const image = projectImages[kind];
   if (!image) return null;
   return (

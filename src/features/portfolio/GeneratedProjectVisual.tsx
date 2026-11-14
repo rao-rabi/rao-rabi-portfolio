@@ -1,9 +1,10 @@
-type VisualKind = 'transloom' | 'harmony' | 'donewise';
+type VisualKind = 'workforce' | 'sports' | 'configurator' | 'harmony';
 
 const labels: Record<VisualKind, { kicker: string; title: string; steps: string[] }> = {
-  transloom: { kicker: 'LOCALISATION WORKFLOW', title: 'Codebase → review', steps: ['Scan source', 'Prepare languages', 'Open pull request'] },
+  workforce: { kicker: 'TEAM OPERATIONS', title: 'Schedule & payroll', steps: ['Plan shifts', 'Record time', 'Run payroll'] },
+  sports: { kicker: 'SPORTS COMMUNITY', title: 'Games & connection', steps: ['Find a game', 'Coordinate a team', 'Follow the action'] },
+  configurator: { kicker: '3D PRODUCT BUILDER', title: 'Configure a trailer', steps: ['Choose a trailer type', 'Build the layout', 'Review the configuration'] },
   harmony: { kicker: 'CODE REVIEW WORKFLOW', title: 'Changes → clarity', steps: ['Analyse change', 'Suggest correction', 'Notify team'] },
-  donewise: { kicker: 'WORK INTELLIGENCE', title: 'History → answers', steps: ['Read Git history', 'Draft work entry', 'Ask project questions'] },
 };
 
 export function GeneratedProjectVisual({ kind, thumbnail = false }: { kind: VisualKind; thumbnail?: boolean }) {

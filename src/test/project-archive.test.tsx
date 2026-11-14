@@ -27,10 +27,10 @@ describe('Project archive categories', () => {
   });
 
   it.each([
-    [/^Web/, ['UpThyme', 'Maardhcum', 'Decoded Skin', 'PropertyFy', 'TransLoom', 'Harmony Code Reviewer', 'Donewise']],
-    [/^Mobile Apps/, ['Athlo', 'Maardhcum', 'Digital Parchi']],
+    [/^Web/, ['Workforce Operations Suite', 'Maardhcum', 'Decoded Skin', 'PropertyFy', 'TransLoom', 'Harmony Code Reviewer', 'Donewise']],
+    [/^Mobile Apps/, ['Sports Community App', 'Maardhcum', 'Digital Parchi']],
     [/^AI Automation/, ['RapidShips', 'Dental Clinic', 'Talkative Buddy', 'Grammar Guru', 'TransLoom', 'Harmony Code Reviewer', 'Donewise']],
-    [/^3D/, ['3D Trailer Builder']],
+    [/^3D/, ['Interactive Food Trailer Configurator']],
   ] as const)('shows only matching projects for %s', (tab, names) => {
     renderArchive();
     chooseTab(tab);

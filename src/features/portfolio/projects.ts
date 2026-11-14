@@ -2,12 +2,12 @@ import { additionalProjects } from './additionalProjects';
 
 const projectDetails = [
   {
-    slug: 'upthyme', projectTypes: ['web'], name: 'UpThyme', category: 'Workforce SaaS', number: '01', theme: 'blue',
+    slug: 'workforce-saas', projectTypes: ['web'], name: 'Workforce Operations Suite', category: 'Workforce SaaS', number: '01', theme: 'workforce',
     summary: 'One workforce platform, from planning the first shift to running payroll and keeping the team connected.',
     problem: 'Scheduling, attendance, HR records, and payroll belong to the same working day. The product needed to bring them together.',
-    context: 'UpThyme spans the operational life of a workforce: who is scheduled, what time they worked, which leave is approved, what needs to get done, and how that work reaches payroll. Building the product meant connecting those responsibilities within a shared SaaS experience.',
-    contribution: 'Built UpThyme from scratch across Next.js and Django, and lead its frontend team.',
-    role: 'I developed UpThyme from scratch and lead its frontend team. My work spans Next.js and Django, frontend architecture, code reviews, and delivery across scheduling, time tracking, HR, operations, payroll, and communication.',
+    context: 'The platform spans the operational life of a workforce: who is scheduled, what time they worked, which leave is approved, what needs to get done, and how that work reaches payroll. Building the product meant connecting those responsibilities within a shared SaaS experience.',
+    contribution: 'Built a workforce SaaS product from scratch across Next.js and Django, and lead its frontend team.',
+    role: 'I developed the workforce product from scratch and lead its frontend team. My work spans Next.js and Django, frontend architecture, code reviews, and delivery across scheduling, time tracking, HR, operations, payroll, and communication.',
     solution: 'A workforce management SaaS with planning, people records, operational workflows, payroll, and team messaging in one product.',
     tags: ['Next.js', 'Django', 'Workforce management'],
     scope: [
@@ -18,15 +18,15 @@ const projectDetails = [
       { title: 'Frontend leadership', description: 'Lead the frontend team, set the frontend architecture, review code, and work with the backend team to ship product features.' },
     ],
     outcome: 'Delivered a workforce platform covering scheduling, timesheets, PTO, payroll, organisation management, documents, reviews, forms, jobs, tasks, and team chat. The result is a connected product spanning both workforce administration and daily operations.',
-    url: 'https://www.upthyme.com/',
+    url: '',
   },
   {
-    slug: 'athlo', projectTypes: ['app'], name: 'Athlo', category: 'Mobile sports platform', number: '02', theme: 'mobile',
+    slug: 'sports-community-app', projectTypes: ['app'], name: 'Sports Community App', category: 'Mobile sports platform', number: '02', theme: 'sports',
     summary: 'A sports ecosystem in your pocket: find a game, organise a team, follow the action, and stay part of the community.',
-    problem: 'Playing, organising, coaching, and following sport create different needs. Athlo brings them into one mobile experience.',
-    context: 'Athlo serves players, parents, coaches, organisers, and fans. Its scope reaches beyond sports content: people can discover nearby pickup games, coordinate teams, book coaching, purchase event tickets, and connect with sports communities.',
+    problem: 'Playing, organising, coaching, and following sport create different needs. The app brings them into one mobile experience.',
+    context: 'The product serves players, parents, coaches, organisers, and fans. Its scope reaches beyond sports content: people can discover nearby pickup games, coordinate teams, book coaching, purchase event tickets, and connect with sports communities.',
     contribution: 'Built the React Native app and Python / Django backend for a broad sports and social product.',
-    role: 'I built Athlo’s mobile app using React Native and its backend using Python and Django. The work combines consumer-facing mobile experiences with the backend supporting a multi-part sports platform.',
+    role: 'I built the mobile app using React Native and its backend using Python and Django. The work combines consumer-facing mobile experiences with the backend supporting a multi-part sports platform.',
     solution: 'An iOS and Android sports platform connecting discovery, team coordination, coaching, events, community, and AI-powered sports features.',
     tags: ['React Native', 'Python', 'Django'],
     scope: [
@@ -36,8 +36,8 @@ const projectDetails = [
       { title: 'Events and participation', description: 'Event purchasing includes QR-based tickets and Apple Wallet integration. Parent and guardian management, digital medical forms, and waivers support young athletes and organised participation.' },
       { title: 'Mobile and backend delivery', description: 'Built the React Native application and Python / Django backend, bringing the product’s sports, social, and operational experiences together.' },
     ],
-    outcome: 'Delivered a web-connected mobile product available on iOS and Android, with a React Native application and Django backend. Athlo brings the participant, organiser, and fan sides of sport into a unified platform.',
-    url: 'https://apps.apple.com/pk/app/athlo-pickup-games-scores/id6745604131',
+    outcome: 'Delivered a web-connected mobile product available on iOS and Android, with a React Native application and Django backend. The platform brings the participant, organiser, and fan sides of sport into one experience.',
+    url: '',
   },
   {
     slug: 'rapidships', projectTypes: ['ai'], name: 'RapidShips', category: 'AI & operations automation', number: '03', theme: 'dark',
@@ -182,12 +182,12 @@ const projectDetails = [
     url: '',
   },
   {
-    slug: '3d-trailer-builder', projectTypes: ['3d'], name: '3D Trailer Builder', category: 'Interactive 3D configurator', number: '11', theme: 'trailer',
+    slug: 'food-trailer-configurator', projectTypes: ['3d'], name: 'Interactive Food Trailer Configurator', category: '3D product configurator', number: '11', theme: 'configurator',
     summary: 'Configure a food trailer in the browser, explore its 3D exterior, choose equipment, and review the build in one guided experience.',
     problem: 'A list of specifications can describe a trailer without making the finished configuration easy to understand. Buyers need to consider the physical product alongside the decisions that shape the build.',
     context: 'Trailer configuration spans the type of food operation, dimensions, materials, serving windows, equipment, and utilities. The challenge is to organise those choices while keeping the overall product in view.',
-    contribution: 'Built the complete 3D Trailer Builder from scratch using Next.js, Three.js, Airtable, and Node.js.',
-    role: 'I built 3D Trailer Builder from scratch, delivering the complete application using Next.js, Three.js, Airtable, and Node.js. My work brought the interactive 3D trailer experience, guided configuration, equipment selection, and build summary together in one product.',
+    contribution: 'Built a complete 3D food trailer configurator from scratch using Next.js, Three.js, Airtable, and Node.js.',
+    role: 'I built the configurator from scratch, delivering the complete application using Next.js, Three.js, Airtable, and Node.js. My work brought the interactive 3D trailer experience, guided configuration, equipment selection, and build summary together in one product.',
     solution: 'A split-screen configurator with a large 3D viewport and a 12-step selection flow, connecting product exploration with structured configuration.',
     tags: ['Next.js', 'Three.js', 'Airtable', 'Node.js'],
     scope: [
@@ -198,11 +198,11 @@ const projectDetails = [
       { title: 'Support revision during configuration', description: 'Undo and redo controls accompany the builder. Key choices remain visible in the bottom summary, with direct access to the full configuration review.' },
     ],
     outcome: 'Delivered the complete browser-based trailer configurator from scratch. The public demo brings hot and cold trailer selection, 3D visualisation, equipment choices, and a consolidated build summary into one guided experience.',
-    url: 'https://3d-trailer-demo.askussolution.tech/',
+    url: '',
   },
 ];
 
-const featuredOrder = ['upthyme', 'rapidships', 'athlo', 'dental-clinic'];
+const featuredOrder = ['workforce-saas', 'rapidships', 'sports-community-app', 'dental-clinic'];
 export const allProjects = [...projectDetails, ...additionalProjects];
 export const hiddenProjectSlugs: string[] = [];
 export const visibleProjects = allProjects.filter(project => !hiddenProjectSlugs.includes(project.slug));

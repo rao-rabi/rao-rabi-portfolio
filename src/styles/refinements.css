@@ -10,7 +10,7 @@
 @media(max-width:600px){.visual-link .workflow-type{font-size:9px}.visual-link .workflow-node strong{font-size:11px}.visual-link .workflow-node p{font-size:9px}.visual-link .workflow-node{padding-block:5px}.visual-link .workflow-heading>span{font-size:9px}.visual-link .automation-visual figcaption{font-size:9px}}
 .project-list .automation-visual,.project-list .project-screenshot img{height:410px}
 @media(max-width:600px){.project-list .automation-visual,.project-list .project-screenshot img{height:370px}}
-.screenshot-upthyme{background:#f4f7f1}.project:hover,.primary:hover{transform:none}
+.project:hover,.primary:hover{transform:none}
 
 .project-screenshot{background:#f5f6ef}.project-screenshot figcaption{color:#43584e}.additional-case-studies .project-copy h3{margin-top:12px}.archive-notes{margin-top:45px}.case-outcome{border:1px solid #cbdcd0;background:#edf4ec;padding:26px;border-radius:10px}.case-body .case-outcome>p:last-child{margin-bottom:0}
 

@@ -12,8 +12,8 @@ it('shows all project content publicly while keeping featured work curated', () 
   expect(allProjects).toHaveLength(14);
   expect(visibleProjects).toHaveLength(14);
   expect(hiddenProjectSlugs).toEqual([]);
-  expect(visibleProjects.some(project => project.slug === '3d-trailer-builder')).toBe(true);
-  expect(selectedProjects.map(project => project.slug)).toEqual(['upthyme', 'rapidships', 'athlo', 'dental-clinic']);
+  expect(visibleProjects.some(project => project.slug === 'food-trailer-configurator')).toBe(true);
+  expect(selectedProjects.map(project => project.slug)).toEqual(['workforce-saas', 'rapidships', 'sports-community-app', 'dental-clinic']);
   expect(selectedProjects).toHaveLength(4);
   for (const slug of hiddenProjectSlugs) {
     expect(allProjects.find(project => project.slug === slug)?.role).toBeTruthy();
@@ -41,7 +41,7 @@ it.each(hiddenProjectSlugs)('does not expose the hidden %s case study by direct 
 });
 
 
-it.each(['upthyme', 'athlo', 'maardhcum', 'rapidships', '3d-trailer-builder'])('restores the %s case study', slug => {
+it.each(['workforce-saas', 'sports-community-app', 'maardhcum', 'rapidships', 'food-trailer-configurator'])('restores the %s case study', slug => {
   vi.spyOn(window, 'scrollTo').mockImplementation(() => {});
   render(<MemoryRouter initialEntries={[`/work/${slug}`]}><Routes><Route path="/work/:slug" element={<CaseStudy />} /></Routes></MemoryRouter>);
   expect(screen.getByRole('heading', { level: 1, name: allProjects.find(project => project.slug === slug)!.name })).toBeInTheDocument();

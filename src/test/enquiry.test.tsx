@@ -21,10 +21,10 @@ function submit() { fireEvent.click(screen.getByRole('button', { name: 'Discuss 
 describe('Project enquiry form', () => {
   it('starts a case-study enquiry with editable project context and sends the edited message', async () => {
     send.mockResolvedValue(undefined);
-    render(<EnquiryForm projectName="Athlo" />);
-    expect(screen.getByLabelText('Project details')).toHaveValue('I’m interested in something like Athlo.\n\n');
+    render(<EnquiryForm projectName="Sports Community App" />);
+    expect(screen.getByLabelText('Project details')).toHaveValue('I’m interested in something like Sports Community App.\n\n');
     fillEnquiry();
-    const details = 'I’m interested in something like Athlo, for a local sports community.';
+    const details = 'I’m interested in something like Sports Community App, for a local sports community.';
     fireEvent.change(screen.getByLabelText('Project details'), { target: { value: details } });
     submit();
     expect(await screen.findByRole('status')).toHaveTextContent('sent');
@@ -32,9 +32,9 @@ describe('Project enquiry form', () => {
   });
   it('does not overwrite an edited project enquiry on rerender or delivery failure', async () => {
     send.mockRejectedValue(new Error('Please email me directly.'));
-    const { rerender } = render(<EnquiryForm projectName="3D Trailer Builder" />);
+    const { rerender } = render(<EnquiryForm projectName="Interactive Food Trailer Configurator" />);
     fillEnquiry();
-    rerender(<EnquiryForm projectName="3D Trailer Builder" />);
+    rerender(<EnquiryForm projectName="Interactive Food Trailer Configurator" />);
     submit();
     expect(await screen.findByRole('alert')).toBeInTheDocument();
     expect(screen.getByLabelText('Project details')).toHaveValue('We need an internal scheduling tool for our team.');

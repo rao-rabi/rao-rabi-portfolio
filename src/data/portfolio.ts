@@ -115,12 +115,12 @@ export const experience = [
 
 export const projects = [
   {
-    name: "UpThyme",
-    tag: "SaaS · Industry Management",
+    name: "Workforce Operations Suite",
+    tag: "SaaS · Workforce Management",
     year: "2024",
-    url: "https://www.upthyme.com/",
+    url: null,
     blurb:
-      "A global SaaS planner platform used across multiple countries to streamline industrial workflows. Scaled to thousands of live users with complex scheduling algorithms and resource modules.",
+      "A workforce SaaS product connecting scheduling, time tracking, leave, payroll, and daily operations.",
     stack: ["Next.js", "Django", "Postgres", "WebSockets"],
     featured: true,
   },
@@ -154,12 +154,12 @@ export const projects = [
     stack: ["React", "NLP"],
   },
   {
-    name: "Athlo",
-    tag: "Sports & Ticketing",
+    name: "Sports Community App",
+    tag: "Mobile Sports Platform",
     year: "2023",
-    url: "https://apps.apple.com/pk/app/athlo-pickup-games-scores/id6745604131",
+    url: null,
     blurb:
-      "A feature-rich sports app letting users create matches, follow news, and buy tickets — built around community and engagement.",
+      "A mobile sports platform for discovering pickup games, following sports news, and coordinating teams and events.",
     stack: ["React Native", "Python", "Django"],
   },
   {

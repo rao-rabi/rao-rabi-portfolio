@@ -1,10 +1,10 @@
 const deliverySteps: Record<string, string[]> = {
-  upthyme: [
+  'workforce-saas': [
     'Planning: scheduling and PTO cover planned shifts and time away. Timesheets record the time worked.',
     'Operations: jobs, tasks, forms, documents, and reviews extend the product beyond the schedule.',
     'Administration and communication: payroll, organisation management, and team chat complete the confirmed delivery scope.',
   ],
-  athlo: [
+  'sports-community-app': [
     'The React Native application provides the mobile experience; Python and Django provide the backend I built for it.',
     'Discovery and participation include pickup games, team coordination, coaching, and event tickets.',
     'News, community, and sports AI features bring the player, organiser, and fan experiences into the same product.',
