@@ -10,10 +10,11 @@ const screenshots = [
 
 export function TrailerScreenshots() {
   return <div className="trailer-screenshots">{screenshots.map(({ src, caption }) => (
-    <figure key={src}>
-      <a href={src} target="_blank" rel="noopener noreferrer" aria-label={`Open screenshot: ${caption}`}>
+    <figure key={src} className="trailer-shot name-masked mask-trailer-screen">
+      <div className="trailer-shot-image">
         <img src={src} alt={caption} width={1920} height={891} loading="lazy" />
-      </a>
+      </div>
+      <span className="name-mask name-mask-ui" aria-hidden="true" />
       <figcaption>{caption}</figcaption>
     </figure>
   ))}</div>;

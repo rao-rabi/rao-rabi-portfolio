@@ -2,6 +2,7 @@
 @import './styles/base.css';
 @import './styles/sections.css';
 @import './styles/project-visuals.css';
+@import './styles/project-name-masks.css';
 @import './styles/generated-project-visuals.css';
 @import './styles/donewise-screenshots.css';
 @import './styles/responsive.css';

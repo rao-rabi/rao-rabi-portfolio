@@ -1,0 +1,5 @@
+.name-masked{position:relative}.name-mask{position:absolute;z-index:2;display:block;pointer-events:none;border-radius:4px;background:rgba(250,249,246,.2);-webkit-backdrop-filter:blur(11px);backdrop-filter:blur(11px)}
+.mask-workforce .name-mask-title{left:5%;top:5%;width:37%;height:13%}.mask-workforce .name-mask-ui{left:8%;top:27%;width:14%;height:5%}
+.mask-sports .name-mask-title{left:5%;top:5%;width:40%;height:14%}.mask-sports .name-mask-ui{left:55%;top:19%;width:9%;height:6%}
+.mask-configurator .name-mask-title{left:22%;top:5%;width:56%;height:13%}.mask-configurator .name-mask-ui{left:6%;top:33%;width:16%;height:5%}
+.trailer-shot{position:relative;overflow:hidden}.mask-trailer-screen .name-mask-ui{left:1%;top:1%;width:18%;height:7%}
